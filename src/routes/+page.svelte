@@ -14,6 +14,6 @@
 	<title>VPN Portal</title>
 </svelte:head>
 
-<section>
+<section class="h-full">
 	<MainContent />
 </section>

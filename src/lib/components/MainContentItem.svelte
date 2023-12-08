@@ -4,7 +4,8 @@
     export let path = '', title = ''
 </script>
 
-<div class="grid flex-grow card bg-base-300 rounded-box p-5 m-2 min-h-max max-w-sm">
+<!-- <div class="grid flex-grow card bg-base-300 rounded-box p-5 m-2 min-h-max max-w-sm"> -->
+<div class="grid flex-grow card bg-base-300 rounded-box p-5 m-2 h-52 max-w-sm items-center">
     <h2 class="text-xl font-bold">
         {title}
     </h2>
