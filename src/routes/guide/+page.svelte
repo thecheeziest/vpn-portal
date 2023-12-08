@@ -1,18 +1,19 @@
 <script>
     import { onMount } from "svelte";
 	import { page } from '$app/stores';
-    import { currentPath } from '$lib/stores/layoutStore';
+    import { currentPath, windowWidth } from '$lib/stores/layoutStore';
 
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-
+    
     onMount(() => {
         $currentPath = $page.url.pathname;
         // 현재 패스명
+        
+        $windowWidth = window.innerWidth;
+        // $windowHeight = window.innerHeight;
 
         const updateWindowSize = () => {
-            windowWidth = window.innerWidth;
-            windowHeight = window.innerHeight;
+            $windowWidth = window.innerWidth;
+            // $windowHeight = window.innerHeight;
         };
         // 윈도우 창 크기 인식
 
@@ -27,7 +28,7 @@
 
 <section>
     <h2 class="text-4xl font-semibold pl-6">How to connect VPN for MacOS</h2>
-    <div class={`flex w-full ${windowWidth <= 820 && "flex-wrap"}`}>
+    <div class={`flex w-full ${$windowWidth <= 820 && "flex-wrap"}`}>
 
         <div class="card bg-base-100 shadow-xl m-5 h-fit">
             <figure><img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/social-networks.jpg?w=2210&quality=70" alt="OVPN File" /></figure>

@@ -10,7 +10,7 @@
 <header class="drawer">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" bind:checked={isDrawerOpen} /> 
 
-    <div class="drawer-content flex flex-col relative h-screen">
+    <div class="drawer-content flex flex-col relative">
         
         <div class="w-full navbar bg-base-300">
 
