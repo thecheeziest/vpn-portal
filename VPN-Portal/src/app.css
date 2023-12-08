@@ -1,0 +1,12 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+body {
+    font-family: 'Pretendard';
+}
+input, select, textarea {
+    text-indent: 10px;
+    outline: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
