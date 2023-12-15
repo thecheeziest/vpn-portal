@@ -6,8 +6,8 @@
     <figure><img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/social-networks.jpg?w=2210&quality=70" alt="OVPN File" /></figure>
     <div class="card-body">
         <strong class="card-title">
-            <slot name="info-title">step 1.</slot>
+            <slot name="guide-title">step 1.</slot>
         </strong>
-        <slot name="info-desc">desc desc desc</slot>
+        <slot name="guide-desc">desc</slot>
     </div>
 </div>

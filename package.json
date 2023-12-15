@@ -26,6 +26,7 @@
 	"type": "module",
 	"dependencies": {
 		"daisyui": "^4.4.19",
-		"postcss-import": "^15.1.0"
+		"postcss-import": "^15.1.0",
+		"svelte-i18n": "^4.0.0"
 	}
 }
