@@ -1,28 +1,25 @@
 <script>
 	import "../app.css";
+	import { page } from '$app/stores';
 	import Header from '$lib/components/Header.svelte';
     import Footer from "$lib/components/Footer.svelte";
-	import { page } from '$app/stores';
 
-	import { onMount } from 'svelte';
+    import { onMount } from "svelte";
+    import { platform, platformName, setLanguage } from "$lib/stores/layoutStore";
 
-let platform = '';
+	onMount(() => {
+		$setLanguage = localStorage.getItem('language') || 'ENG';
+		// setLanguage 값 = 로컬스토리지의 language 값
 
-onMount(() => {
-  // 사용자의 플랫폼 확인
-	if (navigator.platform.includes('Win')) {
-		platform = 'Window';
-	} else if (navigator.platform.includes('Linux')) {
-		platform = 'Linux';
-	}
-});
+		platform.getPlatform();
+        // 현재 플랫폼 감지
 
-let whatplatform = () => {
-	console.log(navigator.platform)
-}
+		$platformName = $platform.split('/')[0]
+		// 현재 플랫폼명 = Windows, iOS..
+	})
 </script>
-<button on:click={whatplatform}>Click</button>
-<div class="min-h-screen relative">
+
+<div class="min-h-screen relative max-w-screen">
 	{#if $page.url.pathname !== '/login'}
 		<Header>
 			<main class="p-5 pb-20 h-full">

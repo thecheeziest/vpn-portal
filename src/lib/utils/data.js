@@ -3,7 +3,7 @@ const categoryData = [
     {path: '/guide', category: 'Guide'},
     {path: '/download', category: 'Download'},
     {path: '/mypage', category: 'My Page'},
-    {path: '/login', category: 'Logout'},
+    {path: '/', category: 'Logout'},
 ]
 
 const infoData = [
@@ -12,4 +12,10 @@ const infoData = [
     {path: '/download', title: 'Download Client'}
 ]
 
-export {categoryData, infoData}
+const downloadClient = [
+    {path: '/guide', download: '', os: 'MacOS'},
+    {path: '/guide', download: '', os: 'Windows'},
+    {path: '/guide', download: '', os: 'Ubuntu'},
+]
+
+export {categoryData, infoData, downloadClient}

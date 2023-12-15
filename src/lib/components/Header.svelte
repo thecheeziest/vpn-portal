@@ -1,10 +1,33 @@
 <script>
+// @ts-nocheck
+
     import Logo from "$lib/images/Logo.png";
     import { categoryData } from "$lib/utils/data";
     import { goto } from "$app/navigation";
-    import { currentPath } from "$lib/stores/layoutStore";
+    import { currentPath, platformName, setLanguage } from "$lib/stores/layoutStore";
     import Navbar from "./Navbar.svelte";
-    let isDrawerOpen = false;
+    import { isLogin } from "$lib/stores/authStore";
+    import dictionary from "../../routes/dictionary";
+
+    let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
+    let onLanguage = false; // 디테일 open = false
+
+    let onGuide = () => { // 가이드 메뉴로
+        goto(`/guide/${$platformName.toLowerCase()}`);
+        isDrawerOpen = false;
+    }
+
+    let logout = () => { // 로그아웃
+        isDrawerOpen = false;
+        $isLogin = false;
+        goto('/');
+    }
+
+    let changeLanguage = (language) => { // 다국어 선택
+        $setLanguage = language;
+        localStorage.setItem("language", language);
+        onLanguage = false;
+    }
 </script>
 
 <header class="drawer">
@@ -12,7 +35,7 @@
 
     <div class="drawer-content flex flex-col relative">
         
-        <div class="w-full navbar bg-base-300">
+        <div class="w-full navbar bg-base-300 min-h-fit">
 
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class:swap-active={isDrawerOpen} class="btn btn-square btn-ghost">
@@ -34,9 +57,10 @@
 
                 <h1 class="text-center absolute left-1/2 -translate-x-1/2 lg:hidden">
                     {#if $currentPath === "/"}
-                    VPN Use Portal
+                        VPN Use Portal
                     {:else}
-                    {$currentPath.slice(1, 2).toUpperCase() + $currentPath.slice(2)}
+                        {$currentPath.split('/').slice(1, 2)}
+                        <!-- 우선 패스명 -->
                     {/if}
                 </h1>
                 <!-- 모바일 Title -->
@@ -54,11 +78,31 @@
         <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-80 min-h-full bg-base-200">
             {#each categoryData as {path, category}}
-                <!-- svelte-ignore a11y-missing-attribute -->
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-                <li class={`m-1 ${category === 'Logout' || category === 'Home' ? "border-y-2 py-2" : ""}`} on:click={() => { goto(path); isDrawerOpen = false; } }><a>{category}</a></li>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                {#if category === 'Logout' && $isLogin}
+                    <li class="m-1 border-t-2 pt-2" on:click={logout}><a>{category}</a></li>
+                {:else if category === 'Guide'}
+                <li class="m-1" on:click={onGuide}><a>{category}</a></li>
+                {:else if category !== 'Logout'}
+                    <li class={`m-1 ${category === 'Logout' || category === 'Home' ? "border-y-2 py-2" : ""}`} on:click={() => { goto(path); isDrawerOpen = false; } }><a>
+                    {category}
+                    </a></li>
+                {/if}
             {/each}
+            <li class="border-y-2 py-2">
+                <details class="dropdown" bind:open={onLanguage}>
+                    <summary><a class="indent-1">Language</a></summary>
+                    <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        {#each Object.keys(dictionary) as language}
+                        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <li on:click={() => changeLanguage(language)}><a>{language}</a></li>    
+                        {/each}
+                    </ul>
+                </details>
+            </li>
         </ul>
         <!-- 모바일 카테고리 -->
     </div>

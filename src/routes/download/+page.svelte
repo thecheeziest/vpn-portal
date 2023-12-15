@@ -1,19 +1,29 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from "svelte";
 	import { page } from '$app/stores';
-    import { currentPath } from '$lib/stores/layoutStore';
+    import { currentPath, platform, platformName } from '$lib/stores/layoutStore';
     import { goto } from "$app/navigation";
+    import { client } from "$lib/stores/downloadStore";
+
+    let forDevice = {}, others = [];
 
     onMount(() => {
         $currentPath = $page.url.pathname;
+        platform.getPlatform();
+        // 현재 플랫폼 감지
+        client.setDevice($platformName);
+        // 현재 플랫폼과 맞는 다운로드 클라이언트 리스트 설정
+        forDevice = $client.forYourDevice[0];
+        others = $client.others;
     });
 
     let checked = true;
 
-    let gotoGuide = () => {
-        goto('/guide');
+    let gotoGuide = (path) => {
+        goto(path);
     }
-
 </script>
 
 <section>
@@ -25,15 +35,11 @@
                 <strong>For your device</strong>
             </div>
             <div class="card-body p-5 border-x border-b rounded-b-xl">
-                <h3 class="card-title">
-                    MacOS
-                </h3>
-                <p>
-                    You can download OpenVPN Connet client for MacOS
-                </p>
+                <h3 class="card-title">{forDevice.os}</h3>
+                <p>You can download OpenVPN Connet client for {forDevice.os}</p>
                 <div>
                     <button class="btn bg-blue-500 text-white my-3">Download</button>
-                    <p class="text-blue-500 cursor-pointer w-fit" on:click={gotoGuide}>Go to guide</p>
+                    <p class="text-blue-500 cursor-pointer w-fit" on:click={() => gotoGuide(forDevice.path)}>Go to guide</p>
                 </div>
             </div>
         </div>
@@ -45,22 +51,16 @@
                     Others
                 </div>
                 <div class="collapse-content bg-white p-0"> 
-                    <div class="card-body p-5 border-y bg-white">
-                        <h3 class="card-title">Windows</h3>
-                        <p>You can download OpenVPN Connet client for Windows</p>
+                    {#each others as item}
+                    <div class="card-body p-5 first:border-y bg-white">
+                            <h3 class="card-title">{item.os}</h3>
+                        <p>You can download OpenVPN Connet client for {item.os}</p>
                         <div>
                             <button class="btn bg-blue-500 text-white my-3">Download</button>
-                            <p class="text-blue-500 cursor-pointer w-fit" on:click={gotoGuide}>Go to guide</p>
+                            <p class="text-blue-500 cursor-pointer w-fit" on:click={() => gotoGuide(item.path)}>Go to guide</p>
                         </div>
                     </div>
-                    <div class="card-body p-5 bg-white">
-                        <h3 class="card-title">Ubuntu</h3>
-                        <p>You can download OpenVPN Connet client for Ubuntu</p>
-                        <div>
-                            <button class="btn bg-blue-500 text-white my-3">Download</button>
-                            <p class="text-blue-500 cursor-pointer w-fit" on:click={gotoGuide}>Go to guide</p>
-                        </div>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
