@@ -29,13 +29,5 @@
 </script>
 
 <section>
-    <h2 class="text-4xl font-semibold text-center my-7">
-        {#if $platformName}
-            {$l(`guide.${$platformName.toLowerCase()}.title`)}
-        {/if}
-    </h2>
-    
-    <div class={`flex w-full flex-wrap justify-center`}>
-        <slot></slot>
-    </div>
+    <slot></slot>
 </section>

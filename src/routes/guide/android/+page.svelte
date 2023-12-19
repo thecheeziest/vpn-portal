@@ -9,10 +9,16 @@
     // homeKeys = dictionary.js의 [ENG 또는 KOR ...].반복할 데이터 경로
 </script>
 
-{#each homeKeys as sectionKey}
-    <GuideItem sectionKey={sectionKey}>
-        <div slot="guide-title">{$l(`guide.android.contents.${sectionKey}.title`)}</div>
-        <div slot="guide-desc">{$l(`guide.android.contents.${sectionKey}.desc`)}</div>
-        <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->
-    </GuideItem>
-{/each}
+<h2 class="text-4xl font-semibold text-center my-7">
+    {$l(`guide.android.title`)}
+</h2>
+
+<div class={`flex w-full flex-wrap justify-center`}>
+    {#each homeKeys as sectionKey}
+        <GuideItem sectionKey={sectionKey}>
+            <div slot="guide-title">{$l(`guide.android.contents.${sectionKey}.title`)}</div>
+            <div slot="guide-desc">{$l(`guide.android.contents.${sectionKey}.desc`)}</div>
+            <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->
+        </GuideItem>
+    {/each}
+</div>

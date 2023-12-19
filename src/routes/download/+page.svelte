@@ -18,8 +18,39 @@
     let currentLanguage = 'ENG'; // 기본 값
     let homeKeys = Object.keys(dictionary[currentLanguage].download.clients);
 
-    let gotoGuide = () => {
-        goto(`/guide/${$platformName.toLowerCase()}`);
+    let gotoGuide = (key) => {
+        if (key === $platformName.toLowerCase()) {
+            goto(`/guide/${$platformName.toLowerCase()}`);
+        } else {
+            goto(`/guide/${key}`);
+        }
+    }
+
+    let goDownload = (key) => {
+        let appId = '';
+        let downloadUrl = '';
+
+        switch(key) {
+            case "windows":
+                alert('windows 링크')
+                break;
+                
+            case "macos":
+                alert('macOs 링크')
+                break;
+
+            case "android":
+                appId = "com.android.app";
+                downloadUrl = `https://play.google.com/store/apps/details?id=${appId}`;
+                window.open(downloadUrl, "_blank");
+                break;
+
+            case "ios":
+                appId = "com.ios.app";
+                downloadUrl = `https://apps.apple.com/us/app/${appId}`;
+                window.open(downloadUrl, "_blank");
+                break;
+        }
     }
 </script>
 
@@ -37,10 +68,10 @@
                     <h3 class="card-title">{$l(`download.clients.${sectionKey}.os`)}</h3>
                     <p>{$l(`download.clients.${sectionKey}.desc`)}</p>
                     <div>
-                        <button class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
+                        <button on:click={() => goDownload(sectionKey)} class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
                         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <p class="text-blue-500 cursor-pointer w-fit" on:click={gotoGuide}>{$l(`download.goto`)}</p>
+                        <p class="text-blue-500 hover:text-blue-300 cursor-pointer w-fit" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
                     </div>
                 </div>
             </div>
@@ -61,10 +92,10 @@
                             <h3 class="card-title">{$l(`download.clients.${sectionKey}.os`)}</h3>
                             <p>{$l(`download.clients.${sectionKey}.desc`)}</p>
                             <div>
-                                <button class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
+                                <button on:click={() => goDownload(sectionKey)} class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
                                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                                 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-                                <p class="text-blue-500 cursor-pointer w-fit" on:click={gotoGuide}>{$l(`download.goto`)}</p>
+                                <p class="text-blue-500 hover:text-blue-300 cursor-pointer w-fit" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
                             </div>
                         </div>                     
                     {/if}

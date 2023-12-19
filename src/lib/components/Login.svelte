@@ -17,7 +17,7 @@
 </script>
 
 <div class="flex flex-col items-center mt-10">
-    <div class="text-center">
+    <div class="text-center mb-5">
         <h1 class="text-5xl font-bold"><img src={ShadowWall} alt="ShadowWall"></h1>
         <p class="py-5 text-gray-500">VPN User Portal</p>
     </div>
