@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
   import { currentPath } from '$lib/stores/layoutStore';
   import ShadowWall from "$lib/images/ShadowWall.png";
-    import { goto } from "$app/navigation";
+  import { goto } from "$app/navigation";
 
     onMount(() => {
         $currentPath = $page.url.pathname;

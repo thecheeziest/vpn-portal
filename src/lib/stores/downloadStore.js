@@ -15,9 +15,10 @@ let setClient = () => {
     const setDevice = (os) => {
         update(item => {
             let forYourDevice = downloadClient.filter(item => item.os === os ||
-                os === 'Safari' ? item.os === 'MacOS' :
-                os === 'Android' ? item.os === 'Windows' :
-                os === 'Linux' ? item.os === 'Uubuntu' :
+                os === 'Windows' ? item.os === 'MacOS' :
+                os === 'MacOS' ? item.os === 'Windows' :
+                os === 'iOS' ? item.os === 'Uubuntu' :
+                os === 'Android' ? item.os === 'Uubuntu' :
                 []);
             return {
                 forYourDevice, 

@@ -1,5 +1,7 @@
 <script>
     import { platformName } from "$lib/stores/layoutStore";
+
+    export let sectionKey = {};
 </script>
 
 <div class={`card bg-base-100 shadow-xl h-fit ${$platformName === 'iOS' || $platformName === 'Android' ? 'w-full m-5' : 'w-2/5 m-10'}`}>

@@ -28,14 +28,14 @@
             <label class="label">
                 <span class="label-text">Account</span>
             </label>
-            <input type="email" placeholder="Enter your VPN account" class="input input-bordered px-1" required />
+            <input type="email" placeholder="Enter your VPN account" class="input input-bordered px-1" required autocomplete="username"/>
         </div>
         <div class="form-control">
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label class="label">
                 <span class="label-text">Password</span>
             </label>
-            <input type="password" placeholder="Enter your VPN password" class="input input-bordered px-1" required />
+            <input type="password" placeholder="Enter your VPN password" class="input input-bordered px-1" required autocomplete="current-password"/>
         </div>
         <div class="form-control mt-6">
             <button class="btn" on:click={login}>Login</button>

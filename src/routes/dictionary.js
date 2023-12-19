@@ -1,5 +1,37 @@
 export default {
 	ENG: {
+		pageTitle: 'Download Page',
+		category: {
+			menu: {
+				home: {
+					title: 'Home',
+					path: '/'
+				},
+				guide: {
+					title: 'Guide',
+					path: '/guide'
+				},
+				download: {
+					title: 'Download',
+					path: '/download'
+				},
+			},
+			mypage: {
+				title: 'My Page',
+				path: '/mypage'
+			},
+			language: {
+				title: 'Language',
+				lan: {
+					eng: 'ENG',
+					kor: 'KOR'
+				}
+			},
+			logout: {
+				title: 'Logout',
+				path: '/'
+			}
+		},
 		home: {
 			welcome: {
 				title: 'Welcome',
@@ -7,7 +39,7 @@ export default {
 				goto: 'Go to Guide',
 				gotoPath: '/guide/',
 				ovpn: 'Download OVPN',
-				ovpnPath: '',
+				ovpnPath: '/',
 			},
 			mypage: {
 				title: 'My Page',
@@ -18,8 +50,9 @@ export default {
 			download: {
 				title: 'Download Client',
 				desc: 'To download client software, Use this page.',
-				goto: 'Direct download',
 				gotoPath: '/download',
+				pc: 'Direct download',
+				pcLink: '/',
 				ios: 'Go to AppStore',
 				iosLink: '/',
 				android: 'Go to PlayStore',
@@ -29,7 +62,7 @@ export default {
 		guide: {
 			windows: {
 				title: 'How to connect VPN for Windows',
-				desc: {
+				contents: {
 					step1: {
 						title: 'Download OVPN File',
 						desc: '1. windows desc'
@@ -48,9 +81,9 @@ export default {
 					},
 				}
 			},
-			MacOS: {
+			macos: {
 				title: 'How to connect VPN for MacOS',
-				desc: {
+				contents: {
 					step1: {
 						title: 'Download OVPN File',
 						desc: '1. MacOS desc'
@@ -69,24 +102,45 @@ export default {
 					},
 				}
 			},
-			Ubuntu: {
-				title: 'How to connect VPN for Ubuntu',
-				desc: {
+			ios: {
+				title: 'How to connect VPN for iOS',
+				contents: {
 					step1: {
 						title: 'Download OVPN File',
-						desc: '1. Ubuntu desc'
+						desc: '1. iOS desc'
 					},
 					step2: {
 						title: 'Download OpenVPN Connect v3',
-						desc: '2. Ubuntu desc'
+						desc: '2. iOS desc'
 					},
 					step3: {
-						title: 'Ubuntu',
-						desc: '3. Ubuntu desc'
+						title: 'iOS',
+						desc: '3. iOS desc'
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. Ubuntu desc'
+						desc: '4. iOS desc'
+					},
+				}
+			},
+			android: {
+				title: 'How to connect VPN for Android',
+				contents: {
+					step1: {
+						title: 'Download OVPN File',
+						desc: '1. Android desc'
+					},
+					step2: {
+						title: 'Download OpenVPN Connect v3',
+						desc: '2. Android desc'
+					},
+					step3: {
+						title: 'Android',
+						desc: '3. Android desc'
+					},
+					step4: {
+						title: 'VPN',
+						desc: '4. Android desc'
 					},
 				}
 			},
@@ -94,24 +148,62 @@ export default {
 		download: {
 			title: 'Download Client',
 			group1: 'For your device',
-			group2: 'others',
-			download: 'download',
+			group2: 'Others',
+			download: 'Download',
 			goto: 'Go to guide',
-			windows: {
-				os: 'Windows',
-				desc: 'You can download OpenVPN Connet client for Windows'
-			},
-			macOS: {
-				os: 'MacOS',
-				desc: 'You can download OpenVPN Connet client for MacOS',
-			},
-			ubuntu: {
-				os: 'Ubuntu',
-				desc: 'You can download OpenVPN Connet client for Ubuntu',
-			},
+			clients: {
+				windows: {
+					os: 'Windows',
+					desc: 'You can download OpenVPN Connet client for Windows'
+				},
+				macos: {
+					os: 'MacOS',
+					desc: 'You can download OpenVPN Connet client for MacOS',
+				},
+				ios: {
+					os: 'iOS',
+					desc: 'You can download OpenVPN Connet client for iOS',
+				},
+				android: {
+					os: 'Android',
+					desc: 'You can download OpenVPN Connet client for Android',
+				},
+			}
 		}
 	},
 	KOR: {
+		pageTitle: '다운로드 페이지',
+		category: {
+			menu: {
+				home: {
+					title: '홈',
+					path: '/'
+				},
+				guide: {
+					title: '가이드',
+					path: '/guide'
+				},
+				download: {
+					title: '다운로드',
+					path: '/download'
+				},
+			},
+			mypage: {
+				title: '마이 페이지',
+				path: '/mypage'
+			},
+			language: {
+				title: '언어',
+				lan: {
+					eng: 'ENG',
+					kor: 'KOR'
+				}
+			},
+			logout: {
+				title: '로그아웃',
+				path: '/'
+			}
+		},
 		home: {
 			welcome: {
 				title: '환영합니다',
@@ -119,7 +211,7 @@ export default {
 				goto: '가이드 보기',
 				gotoPath: '/guide/',
 				ovpn: 'OVPN 다운로드',
-				ovpnPath: '',
+				ovpnPath: '/',
 			},
 			mypage: {
 				title: '마이 페이지',
@@ -130,8 +222,9 @@ export default {
 			download: {
 				title: '클라이언트 다운로드',
 				desc: '해당 페이지에서 클라이언트 소프트웨어를 다운로드할 수 있습니다.',
-				goto: '다운로드 바로가기',
 				gotoPath: '/download',
+				pc: '직접 다운로드',
+				pcLink: '/',
 				ios: '앱스토어 바로가기',
 				iosLink: '/',
 				android: '플레이스토어 바로가기',
@@ -141,7 +234,7 @@ export default {
 		guide: {
 			windows: {
 				title: 'Windows에서 VPN 연결하는 방법',
-				desc: {
+				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
 						desc: '1. Windows 설명'
@@ -160,9 +253,9 @@ export default {
 					},
 				}
 			},
-			MacOS: {
+			macos: {
 				title: 'MacOS에서 VPN 연결하는 방법',
-				desc: {
+				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
 						desc: '1. MacOS 설명'
@@ -181,24 +274,45 @@ export default {
 					},
 				}
 			},
-			Ubuntu: {
-				title: 'Ubuntu에서 VPN 연결하는 방법',
-				desc: {
+			ios: {
+				title: 'iOS에서 VPN 연결하는 방법',
+				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
-						desc: '1. Ubuntu 설명'
+						desc: '1. iOS 설명'
 					},
 					step2: {
 						title: 'OpenVPN Connect v3 다운로드',
-						desc: '2. Ubuntu 설명'
+						desc: '2. iOS 설명'
 					},
 					step3: {
-						title: 'Ubuntu',
-						desc: '3. Ubuntu 설명'
+						title: 'iOS',
+						desc: '3. iOS 설명'
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. Ubuntu 설명'
+						desc: '4. iOS 설명'
+					},
+				}
+			},
+			android: {
+				title: 'Android에서 VPN 연결하는 방법',
+				contents: {
+					step1: {
+						title: 'OVPN 파일 다운로드',
+						desc: '1. Android 설명'
+					},
+					step2: {
+						title: 'OpenVPN Connect v3 다운로드',
+						desc: '2. Android 설명'
+					},
+					step3: {
+						title: 'Android',
+						desc: '3. Android 설명'
+					},
+					step4: {
+						title: 'VPN',
+						desc: '4. Android 설명'
 					},
 				}
 			},
@@ -209,18 +323,24 @@ export default {
 			group2: '다른 기기용',
 			download: '다운로드',
 			goto: '가이드 보기',
-			windows: {
-				os: 'Windows',
-				desc: 'Windows용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
-			},
-			macOS: {
-				os: 'MacOS',
-				desc: 'MacOS용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
-			},
-			ubuntu: {
-				os: 'Ubuntu',
-				desc: 'Ubuntu용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
-			},
+			clients: {
+				windows: {
+					os: 'Windows',
+					desc: 'Windows용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
+				},
+				macos: {
+					os: 'MacOS',
+					desc: 'MacOS용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
+				},
+				ios: {
+					os: 'iOS',
+					desc: 'iOS용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
+				},
+				android: {
+					os: 'Android',
+					desc: 'Android용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
+				},
+			}
 		},
 	},
 }

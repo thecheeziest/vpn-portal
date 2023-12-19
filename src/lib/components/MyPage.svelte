@@ -1,12 +1,14 @@
 <script>
+    import Profile from "$lib/images/Profile.png";
     let isEdit = false;
 </script>
 
 <h2 class="text-center text-4xl font-bold mt-7 mb-16">My Page</h2>
 
-<div class="flex flex-col gap-4 m-auto w-fit">
+<div class="flex flex-col gap-4 m-auto w-fit ">
     <div class="flex gap-4 items-center justify-center">
-        <i class="xi-profile text-9xl"></i>
+        <img src={Profile} alt="profile" class="w-32">
+        
         <div class="flex flex-col gap-4">
             <strong class="text-3xl font-semibold">Alice Liddell</strong>
             <b class="font-medium text-gray-400 -mt-4">alice</b>
@@ -29,9 +31,11 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <input class="w-full h-10 border rounded-md my-3" type="text" placeholder="Enter password">
-                {#if isEdit}
-                <input class="w-full h-10 border rounded-md" type="text" placeholder="Confirm new password">
+                {#if !isEdit}
+                    <input class="w-full h-10 border rounded-md my-3" type="text" placeholder="Enter password">
+                {:else}
+                    <input class="w-full h-10 border rounded-md my-3" type="text" placeholder="Enter new password">
+                    <input class="w-full h-10 border rounded-md" type="text" placeholder="Confirm new password">
                 {/if}
             </div>
         </div>

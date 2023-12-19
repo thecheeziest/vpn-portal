@@ -1,11 +1,15 @@
 <script>
     import { onMount } from "svelte";
-	import { page } from '$app/stores';
-    import { currentPath, platform, windowWidth } from '$lib/stores/layoutStore';
+    import { currentPath, platform, platformName, windowWidth } from '$lib/stores/layoutStore';
+    import { l } from '../i18n';
+    import { page } from "$app/stores";
 
     onMount(() => {
         $currentPath = $page.url.pathname;
-        // 현재 패스명
+        // 현재 패스 값 = nav 메뉴 on
+        
+        $platformName = $platform.split('/')[0];
+        // 현재 플랫폼명 = Windows, iOS..
 
         $windowWidth = window.innerWidth;
         // 현재 창 크기
@@ -23,10 +27,14 @@
         };
     });
 </script>
+
 <section>
     <h2 class="text-4xl font-semibold text-center my-7">
-        How to connect VPN for {$platform.split('/')[0]}
+        {#if $platformName}
+            {$l(`guide.${$platformName.toLowerCase()}.title`)}
+        {/if}
     </h2>
+    
     <div class={`flex w-full flex-wrap justify-center`}>
         <slot></slot>
     </div>
