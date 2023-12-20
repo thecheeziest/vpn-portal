@@ -1,47 +1,46 @@
 <script>
 // @ts-nocheck
+import Logo from "$lib/images/Logo.png";
+import { goto } from "$app/navigation";
+import { currentPath, platformName, setLanguage } from "$lib/stores/layoutStore";
+import Navbar from "./Navbar.svelte";
+import { isLogin } from "$lib/stores/authStore";
+import dictionary from "../../routes/dictionary";
+import { l } from '../../routes/i18n';
 
-    import Logo from "$lib/images/Logo.png";
-    import { goto } from "$app/navigation";
-    import { currentPath, platformName, setLanguage } from "$lib/stores/layoutStore";
-    import Navbar from "./Navbar.svelte";
-    import { isLogin } from "$lib/stores/authStore";
-    import dictionary from "../../routes/dictionary";
-    import { l } from '../../routes/i18n';
+let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
+let onLanguage = false; // 디테일 open = false
 
-    let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
-    let onLanguage = false; // 디테일 open = false
-
-    let onMenu = (path) => {
-        if (path === '/guide') {
-            goto(`/guide/${$platformName.toLowerCase()}`);
-        } else {
-            goto(path);
-        }
-        isDrawerOpen = false;
-    };
-
-    let onGuide = () => { // 가이드 메뉴로
+let onMenu = (path) => {
+    if (path === '/guide') {
         goto(`/guide/${$platformName.toLowerCase()}`);
-        isDrawerOpen = false;
+    } else {
+        goto(path);
     }
+    isDrawerOpen = false;
+};
 
-    let logout = () => { // 로그아웃
-        isDrawerOpen = false;
-        $isLogin = false;
-        goto('/');
-    }
+let onGuide = () => { // 가이드 메뉴로
+    goto(`/guide/${$platformName.toLowerCase()}`);
+    isDrawerOpen = false;
+}
 
-    let changeLanguage = (language) => { // 다국어 선택
-        $setLanguage = language;
-        localStorage.setItem("language", language);
-        onLanguage = false;
-    }
+let logout = () => { // 로그아웃
+    isDrawerOpen = false;
+    $isLogin = false;
+    goto('/');
+}
 
-    let currentLanguage = 'ENG'; // 기본 값
-    let cateKeys = Object.keys(dictionary[currentLanguage].category);
-    let menuKeys = Object.keys(dictionary[currentLanguage].category.menu);
-    let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
+let changeLanguage = (language) => { // 다국어 선택
+    $setLanguage = language;
+    localStorage.setItem("language", language);
+    onLanguage = false;
+}
+
+let currentLanguage = 'ENG'; // 기본 값
+let cateKeys = Object.keys(dictionary[currentLanguage].category);
+let menuKeys = Object.keys(dictionary[currentLanguage].category.menu);
+let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
 </script>
 
 <header class="drawer">
@@ -49,7 +48,7 @@
 
     <div class="drawer-content flex flex-col relative">
         
-        <div class="w-full navbar bg-base-300 min-h-fit">
+        <div class="w-full navbar bg-my-500 min-h-fit shadow-xl text-my-100">
 
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class:swap-active={isDrawerOpen} class="btn btn-square btn-ghost">
@@ -91,7 +90,7 @@
 
     <div class={`drawer-side`}>
         <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
-        <ul class="menu p-4 w-80 min-h-full bg-base-200">
+        <ul class="menu p-4 w-5/6 min-h-full bg-base-200">
             {#each menuKeys as sectionKey}
                 <li on:click={() => onMenu($l(`category.menu.${sectionKey}.path`))} class={`m-1 ${sectionKey === 'home' ? "border-y-2 py-2" : ""}`}>
                     <a>{$l(`category.menu.${sectionKey}.title`)}</a>
@@ -105,13 +104,6 @@
                 <li class="m-1 border-t-2 pt-2" on:click={logout}><a>{$l(`category.${sectionKey}.title`)}</a></li>
             {/if}
             {/each}
-                <!-- {#if category === 'Logout' && $isLogin}
-                    <li class="m-1 border-t-2 pt-2" on:click={logout}><a>{category}</a></li>
-                {:else if category !== 'Logout'}
-                    <li class={`m-1 ${category === 'Logout' || category === 'Home' ? "border-y-2 py-2" : ""}`} on:click={() => { goto(path); isDrawerOpen = false; } }><a>
-                    {category}
-                    </a></li>
-                {/if} -->
 
             <li class="border-y-2 py-2 m-1">
                 <details class="dropdown" bind:open={onLanguage}>

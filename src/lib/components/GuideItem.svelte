@@ -4,7 +4,7 @@
     export let sectionKey = {};
 </script>
 
-<div class={`card bg-base-100 shadow-xl h-fit ${$platformName === 'iOS' || $platformName === 'Android' ? 'w-full m-5' : 'w-2/5 m-10'}`}>
+<div class={`card bg-base-100 shadow-xl h-fit ${$platformName === 'iOS' || $platformName === 'Android' ? 'w-full m-5' : 'w-2/5 mt-3 mx-5 mb-10'}`}>
     <figure><img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/social-networks.jpg?w=2210&quality=70" alt="OVPN File" /></figure>
     <div class="card-body">
         <strong class="card-title">

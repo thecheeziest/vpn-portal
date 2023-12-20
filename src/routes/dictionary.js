@@ -169,7 +169,32 @@ export default {
 					desc: 'You can download OpenVPN Connet client for Android',
 				},
 			}
-		}
+		},
+		login: {
+			title: 'VPN User Portal',
+			account: 'Account',
+			accountPl: 'Enter your VPN account',
+			password: 'Password',
+			passwordPl: 'Enter your VPN password',
+			login: 'Login'
+		},
+		mypage: {
+			title: 'My Page',
+			download: 'Download OVPN',
+			group: {
+				title: 'Group',
+				rnd: 'Research & Develement Center',
+			},
+			password: 'Password',
+			passwordPl: 'Enter password',
+			passwordPlNew: 'Enter new password',
+			passwordPlConfirm: 'Confirm new password',
+			button: {
+				change: 'Change',
+				cancel: 'Cancel',
+				ok: 'OK'
+			}
+		},
 	},
 	KOR: {
 		pageTitle: '다운로드 페이지',
@@ -340,6 +365,31 @@ export default {
 					os: 'Android',
 					desc: 'Android용 OpenVPN Connect 클라이언트를 다운로드할 수 있습니다.'
 				},
+			}
+		},
+		login: {
+			title: 'VPN 사용자 포털',
+			account: '아이디',
+			accountPl: 'VPN 계정을 입력하세요',
+			password: '비밀번호',
+			passwordPl: 'VPN 비밀번호를 입력하세요',
+			login: '로그인'
+		},
+		mypage: {
+			title: '마이 페이지',
+			download: 'OVPN 다운로드',
+			group: {
+				title: '그룹',
+				rnd: '연구 & 개발 센터',
+			},
+			password: '비밀번호',
+			passwordPl: '비밀번호 입력',
+			passwordPlNew: '새 비밀번호 입력',
+			passwordPlConfirm: '새 비밀번호 확인',
+			button: {
+				change: '변경',
+				cancel: '취소',
+				ok: '확인'
 			}
 		},
 	},

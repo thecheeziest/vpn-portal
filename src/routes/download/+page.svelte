@@ -55,23 +55,23 @@
 </script>
 
 <section>
-    <h2 class="text-center text-4xl font-bold my-7">{$l(`download.title`)}</h2>
+    <h2 class="text-center text-4xl font-bold my-7 text-my-500">{$l(`download.title`)}</h2>
     <div class="flex w-full justify-center flex-wrap">
 
         {#each homeKeys as sectionKey}
         {#if $platformName.toLowerCase() === sectionKey}
-            <div class="card w-96 h-fit bg-base-100 shadow-xl m-3">
-                <div class="card-body pt-4 pb-5 px-5 bg-base-200 border rounded-t-xl">
+            <div class="card w-96 h-fit shadow-xl m-3 mb-10">
+                <div class="card-body pt-4 pb-5 px-5 bg-my-050 border rounded-t-xl">
                     <strong>{$l(`download.group1`)}</strong>
                 </div>
                 <div class="card-body p-5 border-x border-b rounded-b-xl">
                     <h3 class="card-title">{$l(`download.clients.${sectionKey}.os`)}</h3>
                     <p>{$l(`download.clients.${sectionKey}.desc`)}</p>
-                    <div>
-                        <button on:click={() => goDownload(sectionKey)} class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
-                        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                    <div class="relative">
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <p class="text-blue-500 hover:text-blue-300 cursor-pointer w-fit" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
+                        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                        <p class="text-my-500 hover:text-my-org cursor-pointer w-fit absolute right-5" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
+                        <button on:click={() => goDownload(sectionKey)} class="btn w-full bg-my-400 text-white mt-8">{$l(`download.download`)}</button>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
         {/each}
 
         <div class="w-96 m-3">
-            <div class="collapse collapse-arrow bg-base-200 border shadow-xl">
+            <div class="collapse collapse-arrow bg-my-050 border shadow-xl">
                 <input class="border min-h-0 rounded-xl" type="checkbox" name="my-accordion-2" bind:checked={checked} /> 
                 <div class="collapse-title font-bold">
                     {$l(`download.group2`)}
@@ -92,10 +92,10 @@
                             <h3 class="card-title">{$l(`download.clients.${sectionKey}.os`)}</h3>
                             <p>{$l(`download.clients.${sectionKey}.desc`)}</p>
                             <div>
-                                <button on:click={() => goDownload(sectionKey)} class="btn bg-blue-500 text-white my-3">{$l(`download.download`)}</button>
                                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                                 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-                                <p class="text-blue-500 hover:text-blue-300 cursor-pointer w-fit" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
+                                <p class="text-my-500 hover:text-my-org cursor-pointer w-fit absolute right-9" on:click={() => gotoGuide(sectionKey)}>{$l(`download.goto`)}</p>
+                                <button on:click={() => goDownload(sectionKey)} class="btn w-full bg-my-400 text-white mt-8">{$l(`download.download`)}</button>
                             </div>
                         </div>                     
                     {/if}

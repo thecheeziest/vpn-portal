@@ -62,7 +62,7 @@ import dictionary from '../../routes/dictionary';
                 </a>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-my-500">
                 {#each cateKeys as sectionKey}
                     {#if sectionKey === 'mypage'}
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
