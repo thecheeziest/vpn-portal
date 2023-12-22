@@ -1,5 +1,6 @@
 <script>
-// @ts-nocheck
+    // @ts-nocheck
+import ThemeSwitcher from './ThemeSwitcher.svelte';
 import { currentPath, platformName, setLanguage } from "$lib/stores/layoutStore";
 import { goto } from "$app/navigation";
 import { isLogin } from "$lib/stores/authStore";
@@ -62,7 +63,7 @@ import dictionary from '../../routes/dictionary';
                 </a>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-my-500">
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-base-content">
                 {#each cateKeys as sectionKey}
                     {#if sectionKey === 'mypage'}
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -91,6 +92,9 @@ import dictionary from '../../routes/dictionary';
                             {/each}
                         </ul>
                     </details>
+                </li>
+                <li>
+                    <ThemeSwitcher />
                 </li>
             </ul>
         </div>

@@ -1,6 +1,7 @@
 <script>
 	import "../app.css";
 	import { page } from '$app/stores';
+	import { themeChange } from 'theme-change';
 	import Header from '$lib/components/Header.svelte';
     import Footer from "$lib/components/Footer.svelte";
 
@@ -16,6 +17,8 @@
 
 		$platformName = $platform.split('/')[0]
 		// 현재 플랫폼명 = Windows, iOS..
+
+		themeChange();
 	})
 </script>
 

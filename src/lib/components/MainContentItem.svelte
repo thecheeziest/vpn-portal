@@ -52,10 +52,10 @@ let onLink = (e) => {
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:click={gotoPage} class="grid flex-grow card bg-my-400 rounded-3xl p-5 m-5 max-w-sm cursor-pointer
-text-my-100 border-4 border-my-200 shadow-xl hover:bg-my-300">
+<div on:click={gotoPage} class="grid flex-grow card rounded-3xl p-5 m-5 max-w-sm cursor-pointer
+bg-primary text-primary-content border-secondary-content border-4 shadow-xl hover:bg-accent">
     <!-- 카드 클릭 시 가이드, 마이페이지, 다운로드 이동 -->
-    <h2 class="text-3xl text-center font-bold border-my-300 border-b-2 pb-4">
+    <h2 class="text-3xl text-center font-bold border-secondary-content border-b-2 pb-4">
         {$l(`home.${sectionKey}.title`)}
     </h2>
     <p class="my-3">
@@ -66,37 +66,37 @@ text-my-100 border-4 border-my-200 shadow-xl hover:bg-my-300">
         {/if}
     </p>
 
-    <div class="flex flex-wrap text-my-org">
+    <div class="flex flex-wrap text-warning">
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         {#if sectionKey !== 'download'}
         <!-- Download 카드 아닐 때 -->
-            <p class="w-fit cursor-pointer hover:text-my-lorg mr-10" on:click={gotoPage}>
+            <p class="w-fit cursor-pointer hover:text-warning-content mr-10" on:click={gotoPage}>
                 {$l(`home.${sectionKey}.goto`)}
                 <!-- go to guide, go to my page -->
             </p>
 
         {:else if sectionKey === 'download' && $platformName === 'Windows' || $platformName === 'MacOS'}
         <!-- Download 카드일 경우 os가 windows, mac일 때 -->
-            <p class="w-fit cursor-pointer hover:text-my-lorg" on:click={ e => onLink(e) }>
+            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
                 {$l(`home.${sectionKey}.pc`)}
                 <!-- 직접 다운로드 링크 -->
             </p>
 
         {:else if sectionKey === 'download' && $platformName === 'iOS'}
-            <p class="w-fit cursor-pointer hover:text-my-lorg" on:click={ e => onLink(e) }>
+            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
                 {$l(`home.${sectionKey}.${$platformName.toLowerCase()}`)}
                 <!-- Download 카드일 경우 iOS일 때 Go to AppStore 표시 -->
             </p>
 
         {:else if sectionKey === 'download' && $platformName === 'Android'}
-            <p class="w-fit cursor-pointer hover:text-my-lorg" on:click={ e => onLink(e) }>
+            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
                 {$l(`home.${sectionKey}.${$platformName.toLowerCase()}`)}
                 <!-- Download 카드일 경우 Android일 때 Go to PlayStore 표시 -->
             </p>
         {/if}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         {#if sectionKey === 'welcome'}
-            <p class="w-fit cursor-pointer hover:text-my-lorg" on:click={ e => onLink(e) }>
+            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
                 {$l(`home.${sectionKey}.ovpn`)}
                 <!-- Welcome 카드일 경우 OVPN 표시 -->
             </p>

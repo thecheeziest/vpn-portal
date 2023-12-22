@@ -41,7 +41,7 @@
             <input type="password" placeholder={$l(`login.passwordPl`)} class="input input-bordered px-1" required autocomplete="current-password"/>
         </div>
         <div class="form-control m-4 mt-7">
-            <button class="btn" on:click={login}>{$l(`login.login`)}</button>
+            <button class="btn border-base-300" on:click={login}>{$l(`login.login`)}</button>
         </div>
     </form>
 </div>

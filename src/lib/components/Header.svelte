@@ -2,7 +2,7 @@
 // @ts-nocheck
 import Logo from "$lib/images/Logo.png";
 import { goto } from "$app/navigation";
-import { currentPath, platformName, setLanguage } from "$lib/stores/layoutStore";
+import { currentPath, darkmode, platformName, setLanguage } from "$lib/stores/layoutStore";
 import Navbar from "./Navbar.svelte";
 import { isLogin } from "$lib/stores/authStore";
 import dictionary from "../../routes/dictionary";
@@ -48,7 +48,7 @@ let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
 
     <div class="drawer-content flex flex-col relative">
         
-        <div class="w-full navbar bg-my-500 min-h-fit shadow-xl text-my-100">
+        <div class={`w-full navbar min-h-fit shadow-xl ${!$darkmode && "bg-my-500 text-my-100"}`}>
 
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class:swap-active={isDrawerOpen} class="btn btn-square btn-ghost">
@@ -60,7 +60,7 @@ let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
             <div class="flex-1 px-2 mx-2">
                 <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <div on:click={() => goto('/')} class="bg-my-cocoa p-1 rounded-md hidden lg:block cursor-pointer">
+                <div on:click={() => goto('/')} class="p-1 rounded-md hidden lg:block cursor-pointer">
                     <img src={Logo} alt="Logo">
                 </div>
                 <!-- Duruan Logo -->

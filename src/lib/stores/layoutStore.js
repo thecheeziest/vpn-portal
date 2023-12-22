@@ -4,6 +4,7 @@ export let currentPath = writable(''); // 현재 패스 값
 export let windowWidth = writable(0); // 현재 윈도우창 너비
 export let setLanguage = writable('ENG'); // 현재 설정 언어
 export let platformName = writable(''); // 현재 플랫폼명
+export let darkmode = writable(false); // 다크 모드
 
 const setPlatform = () => { // 플랫폼 인식
     let initValues = '';
