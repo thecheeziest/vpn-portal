@@ -21,13 +21,13 @@
                 break;
 
             case "android":
-                appId = "com.android.app";
+                appId = "net.openvpn.openvpn";
                 downloadUrl = `https://play.google.com/store/apps/details?id=${appId}`;
                 window.open(downloadUrl, "_blank");
                 break;
 
             case "ios":
-                appId = "com.ios.app";
+                appId = "590379981";
                 downloadUrl = `https://apps.apple.com/us/app/${appId}`;
                 window.open(downloadUrl, "_blank");
                 break;

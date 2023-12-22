@@ -48,7 +48,7 @@ let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
 
     <div class="drawer-content flex flex-col relative">
         
-        <div class={` w-full navbar min-h-fit shadow-xl ${!$darkmode && "bg-my-500 text-my-100"} `}>
+        <div class={` w-full navbar min-h-fit shadow-xl ${$darkmode ? "bg-base-300" : "bg-my-500 text-my-100"} `}>
 
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class:swap-active={isDrawerOpen} class="btn btn-square btn-ghost">
