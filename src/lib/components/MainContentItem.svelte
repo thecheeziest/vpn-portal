@@ -1,61 +1,34 @@
 <script>
 // @ts-nocheck
-import { goto } from "$app/navigation";
-import { platform, platformName } from "$lib/stores/layoutStore";
-import { onMount } from "svelte";
-import { l } from '../../routes/i18n';
+    import { goto } from "$app/navigation";
+    import { darkmode, platform, platformName } from "$lib/stores/layoutStore";
+    import { onMount } from "svelte";
+    import { l } from '../../routes/i18n';
+    import GotoLink from "./GotoLink.svelte";
 
-export let sectionKey = '';
+    export let sectionKey = '';
 
-onMount(() => {
-    platform.getPlatform();
-    // 현재 플랫폼 감지
-});
+    onMount(() => {
+        platform.getPlatform();
+        // 현재 플랫폼 감지
+    });
 
-let gotoPage = () => {
-    if (sectionKey === 'welcome') {
-        return goto(`/guide/${$platformName.toLowerCase()}`);
-        // 가이드 클릭 시 현재 운영 체제에 맞는 페이지로
-    } else {
-        return goto($l(`home.${sectionKey}.gotoPath`));
+    let gotoPage = () => {
+        if (sectionKey === 'welcome') {
+            return goto(`/guide/${$platformName.toLowerCase()}`);
+            // 가이드 클릭 시 현재 운영 체제에 맞는 페이지로
+        } else {
+            return goto($l(`home.${sectionKey}.gotoPath`));
+        }
     }
-}
-
-let onLink = (e) => {
-    e.stopPropagation();
-    let appId = '';
-    let downloadUrl = '';
-
-    switch($platformName) {
-        case "Windows":
-            alert('windows 링크')
-            break;
-            
-        case "MacOS":
-            alert('macOs 링크')
-            break;
-
-        case "Android":
-            appId = "com.android.app";
-            downloadUrl = `https://play.google.com/store/apps/details?id=${appId}`;
-            window.open(downloadUrl, "_blank");
-            break;
-
-        case "iOS":
-            appId = "com.ios.app";
-            downloadUrl = `https://apps.apple.com/us/app/${appId}`;
-            window.open(downloadUrl, "_blank");
-            break;
-    }
-}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:click={gotoPage} class="grid flex-grow card rounded-3xl p-5 m-5 max-w-sm cursor-pointer
-bg-primary text-primary-content border-secondary-content border-4 shadow-xl hover:bg-accent">
+<div on:click={gotoPage} class={` grid flex-grow card rounded-3xl p-5 m-5 max-w-sm cursor-pointer
+${$darkmode ? "hover:bg-gray-900" : "bg-my-100 text-my-500 border-my-300 hover:bg-my-400 hover:text-my-100"} border-4 shadow-xl `}>
     <!-- 카드 클릭 시 가이드, 마이페이지, 다운로드 이동 -->
-    <h2 class="text-3xl text-center font-bold border-secondary-content border-b-2 pb-4">
+    <h2 class={` text-3xl text-center font-bold border-b-2 pb-4 ${!$darkmode && "border-my-300"} `}>
         {$l(`home.${sectionKey}.title`)}
     </h2>
     <p class="my-3">
@@ -66,40 +39,35 @@ bg-primary text-primary-content border-secondary-content border-4 shadow-xl hove
         {/if}
     </p>
 
-    <div class="flex flex-wrap text-warning">
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <div class="flex flex-wrap">
         {#if sectionKey !== 'download'}
         <!-- Download 카드 아닐 때 -->
-            <p class="w-fit cursor-pointer hover:text-warning-content mr-10" on:click={gotoPage}>
-                {$l(`home.${sectionKey}.goto`)}
-                <!-- go to guide, go to my page -->
-            </p>
+            <GotoLink type="page">{$l(`home.${sectionKey}.goto`)}</GotoLink>
+            <!-- go to guide, go to my page -->
 
         {:else if sectionKey === 'download' && $platformName === 'Windows' || $platformName === 'MacOS'}
-        <!-- Download 카드일 경우 os가 windows, mac일 때 -->
-            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
+            <GotoLink>
                 {$l(`home.${sectionKey}.pc`)}
-                <!-- 직접 다운로드 링크 -->
-            </p>
+            </GotoLink>
+            <!-- 직접 다운로드 링크 -->
 
         {:else if sectionKey === 'download' && $platformName === 'iOS'}
-            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
+            <GotoLink>
                 {$l(`home.${sectionKey}.${$platformName.toLowerCase()}`)}
-                <!-- Download 카드일 경우 iOS일 때 Go to AppStore 표시 -->
-            </p>
+            </GotoLink>
+            <!-- Download 카드일 경우 iOS일 때 Go to AppStore 표시 -->
 
         {:else if sectionKey === 'download' && $platformName === 'Android'}
-            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
+            <GotoLink>
                 {$l(`home.${sectionKey}.${$platformName.toLowerCase()}`)}
-                <!-- Download 카드일 경우 Android일 때 Go to PlayStore 표시 -->
-            </p>
+            </GotoLink>
+            <!-- Download 카드일 경우 Android일 때 Go to PlayStore 표시 -->
         {/if}
-        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         {#if sectionKey === 'welcome'}
-            <p class="w-fit cursor-pointer hover:text-warning-content" on:click={ e => onLink(e) }>
+            <GotoLink>
                 {$l(`home.${sectionKey}.ovpn`)}
-                <!-- Welcome 카드일 경우 OVPN 표시 -->
-            </p>
+            </GotoLink>
+            <!-- Welcome 카드일 경우 OVPN 표시 -->
         {/if}
     </div>
 </div>

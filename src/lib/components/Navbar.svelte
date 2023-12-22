@@ -63,7 +63,7 @@ import dictionary from '../../routes/dictionary';
                 </a>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-base-content">
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 text-base-content">
                 {#each cateKeys as sectionKey}
                     {#if sectionKey === 'mypage'}
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -83,7 +83,7 @@ import dictionary from '../../routes/dictionary';
                     <details class="dropdown" bind:open={onLanguage}>
                         <!-- svelte-ignore a11y-missing-attribute -->
                         <summary class="text-base"><a>{$l(`category.language.title`)}</a></summary>
-                        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
                             {#each lanKeys as sectionKey}
                             <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
                             <!-- svelte-ignore a11y-click-events-have-key-events -->

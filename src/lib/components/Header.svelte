@@ -48,7 +48,7 @@ let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
 
     <div class="drawer-content flex flex-col relative">
         
-        <div class={`w-full navbar min-h-fit shadow-xl ${!$darkmode && "bg-my-500 text-my-100"}`}>
+        <div class={` w-full navbar min-h-fit shadow-xl ${!$darkmode && "bg-my-500 text-my-100"} `}>
 
             <div class="flex-none lg:hidden">
                 <label for="my-drawer-3" aria-label="open sidebar" class:swap-active={isDrawerOpen} class="btn btn-square btn-ghost">
@@ -91,22 +91,34 @@ let lanKeys = Object.keys(dictionary[currentLanguage].category.language.lan);
     <div class={`drawer-side`}>
         <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
         <ul class="menu p-4 w-5/6 min-h-full bg-base-200">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
             {#each menuKeys as sectionKey}
+                <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
                 <li on:click={() => onMenu($l(`category.menu.${sectionKey}.path`))} class={`m-1 ${sectionKey === 'home' ? "border-y-2 py-2" : ""}`}>
+                    <!-- svelte-ignore a11y-missing-attribute -->
                     <a>{$l(`category.menu.${sectionKey}.title`)}</a>
                 </li>
             {/each}
 
             {#each cateKeys as sectionKey}
+            <!-- svelte-ignore a11y-missing-attribute -->
             {#if sectionKey === 'mypage'}
+                <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
                 <li class="m-1" on:click={() => { goto('/mypage'); isDrawerOpen = false; } }><a>{$l(`category.${sectionKey}.title`)}</a></li>
+            <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
             {:else if sectionKey === 'logout' && $isLogin}
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
                 <li class="m-1 border-t-2 pt-2" on:click={logout}><a>{$l(`category.${sectionKey}.title`)}</a></li>
             {/if}
             {/each}
 
             <li class="border-y-2 py-2 m-1">
                 <details class="dropdown" bind:open={onLanguage}>
+                    <!-- svelte-ignore a11y-missing-attribute -->
                     <summary><a>{$l(`category.language.title`)}</a></summary>
                     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         {#each lanKeys as sectionKey}

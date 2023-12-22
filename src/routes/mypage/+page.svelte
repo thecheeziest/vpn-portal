@@ -13,8 +13,8 @@
 
 <section class="h-full">
     {#if !$isLogin}
-    <Login />
+        <Login />
     {:else}
-    <MyPage />
+        <MyPage />
     {/if}
 </section>

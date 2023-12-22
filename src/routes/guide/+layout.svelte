@@ -1,13 +1,15 @@
 <script>
     import { onMount } from "svelte";
     import { currentPath, platform, platformName, windowWidth } from '$lib/stores/layoutStore';
-    import { l } from '../i18n';
     import { page } from "$app/stores";
 
     onMount(() => {
         $currentPath = $page.url.pathname;
         // 현재 패스 값 = nav 메뉴 on
         
+        platform.getPlatform();
+        // 플랫폼 감지
+
         $platformName = $platform.split('/')[0];
         // 현재 플랫폼명 = Windows, iOS..
 
