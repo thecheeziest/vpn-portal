@@ -33,6 +33,7 @@ ${$darkmode ? "hover:bg-gray-900" : "bg-my-100 text-my-500 border-my-300 hover:b
     </h2>
     <p class="my-3">
         {@html $l(`home.${sectionKey}.desc`)}
+        
         {#if sectionKey === 'welcome'}
             {$platform.split('/')[1]} on {$platformName} 
             <!-- Welcome 카드 부분 : 브라우저 on OS -->

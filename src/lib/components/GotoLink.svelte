@@ -49,7 +49,7 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <p on:click={goPage}
-class={` w-fit cursor-pointer absolute left-2/3
+class={` w-fit cursor-pointer my-3
 ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
 <slot></slot>
 </p>

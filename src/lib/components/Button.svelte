@@ -64,9 +64,8 @@ ${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "border-my-400 tex
 
 {:else}
 
-<button on:click={onButton} class={`btn w-full
-${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "bg-my-400 text-my-050 hover:bg-my-300"}
-${type === "download" && "mt-8"} `}>
+<button on:click={onButton} class={` btn w-full
+${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "bg-my-400 text-my-050 hover:bg-my-300"} `}>
     <slot></slot>
 </button>
 
