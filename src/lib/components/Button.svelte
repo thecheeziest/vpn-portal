@@ -55,18 +55,14 @@
 </script>
 
 {#if type === "ok" || type === "change"}
-
-<button on:click={onButton}
-class={`btn btn-outline min-h-fit h-7
-${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "border-my-400 text-my-400 hover:bg-my-400 hover:border-my-400"} `}>
-    <slot></slot>
-</button>
-
+    <button on:click={onButton}
+    class={`btn btn-outline min-h-fit h-7
+    ${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "border-my-400 text-my-400 hover:bg-my-400 hover:border-my-400"} `}>
+        <slot></slot>
+    </button>
 {:else}
-
-<button on:click={onButton} class={` btn w-full
-${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "bg-my-400 text-my-050 hover:bg-my-300"} `}>
-    <slot></slot>
-</button>
-
+    <button on:click={onButton} class={` btn w-full
+    ${$darkmode ? "border-my-300 bg-my-500 hover:border-my-300" : "bg-my-400 text-my-050 hover:bg-my-300"} `}>
+        <slot></slot>
+    </button>
 {/if}

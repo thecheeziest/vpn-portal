@@ -46,28 +46,22 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 {#if type === "guide"}
-
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<p on:click={goPage}
-class={` w-fit cursor-pointer my-3
-${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
-<slot></slot>
-</p>
-
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <p on:click={goPage}
+    class={` w-fit cursor-pointer my-5
+    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    <slot></slot>
+    </p>
 {:else if type === "page"}
-
-<p class={` w-fit cursor-pointer mr-10
-${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
-<slot></slot>
-</p>
-
+    <p class={` w-fit cursor-pointer mr-10
+    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    <slot></slot>
+    </p>
 {:else}
-
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<p on:click={ e => onLink(e)}
-class={` w-fit cursor-pointer
-${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
-<slot></slot>
-</p>
-
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <p on:click={ e => onLink(e)}
+    class={` w-fit cursor-pointer
+    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    <slot></slot>
+    </p>
 {/if}

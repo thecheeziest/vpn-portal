@@ -14,11 +14,11 @@
 </h2>
 
 <div class={`flex w-full flex-wrap justify-center`}>
-{#each homeKeys as sectionKey}
-    <GuideItem>
-        <div slot="guide-title">{$l(`guide.ios.contents.${sectionKey}.title`)}</div>
-        <div slot="guide-desc">{$l(`guide.ios.contents.${sectionKey}.desc`)}</div>
-        <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->
-    </GuideItem>
-{/each}
+    {#each homeKeys as sectionKey}
+        <GuideItem>
+            <div slot="guide-title">{$l(`guide.ios.contents.${sectionKey}.title`)}</div>
+            <div slot="guide-desc">{$l(`guide.ios.contents.${sectionKey}.desc`)}</div>
+            <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->
+        </GuideItem>
+    {/each}
 </div>

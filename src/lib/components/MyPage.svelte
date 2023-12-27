@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+    // @ts-nocheck
     import Profile from "$lib/images/Profile.png";
     import { l } from '../../routes/i18n';
     import { darkmode } from "$lib/stores/layoutStore";
