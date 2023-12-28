@@ -5,8 +5,8 @@
 	import Header from '$lib/components/Header.svelte';
     import Footer from "$lib/components/Footer.svelte";
 
-    import { onMount } from "svelte";
-    import { platform, platformName, setLanguage } from "$lib/stores/layoutStore";
+	import {onDestroy, onMount} from 'svelte';
+	import {platform, platformName, setLanguage, darkmode, mode} from '$lib/stores/layoutStore';
 
 	onMount(() => {
 		$setLanguage = localStorage.getItem('language') || 'ENG';
@@ -18,10 +18,13 @@
 		$platformName = $platform.split('/')[0]
 		// 현재 플랫폼명 = Windows, iOS..
 
-		themeChange();
-	})
-</script>
+		$darkmode = localStorage.getItem('mode') === "dark";
+		// darkmode로 저장되어 있으면 dark 테마 설정
 
+		themeChange();
+	});
+
+</script>
 <div class="min-h-screen relative max-w-screen">
 	{#if $page.url.pathname !== '/login'}
 		<Header>
