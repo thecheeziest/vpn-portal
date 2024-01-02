@@ -15,7 +15,7 @@
 
 <div class={`flex w-full flex-wrap justify-center`}>
     {#each homeKeys as sectionKey}
-        <GuideItem>
+        <GuideItem img={$l(`guide.android.contents.${sectionKey}.img`)}>
             <div slot="guide-title">{$l(`guide.android.contents.${sectionKey}.title`)}</div>
             <div slot="guide-desc">{$l(`guide.android.contents.${sectionKey}.desc`)}</div>
             <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->

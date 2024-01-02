@@ -65,19 +65,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'Download OVPN File',
-						desc: '1. windows desc'
+						desc: '1. windows desc',
+						img: 'https://i0.wp.com/picjumbo.com/wp-content/uploads/social-networks.jpg?w=2210&quality=70',
 					},
 					step2: {
 						title: 'Download OpenVPN Connect v3',
-						desc: '2. windows desc'
+						desc: '2. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg',
 					},
 					step3: {
 						title: 'Windows',
-						desc: '3. windows desc'
+						desc: '3. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2015/06/24/15/45/hands-820272_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. windows desc'
+						desc: '4. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
 					},
 				}
 			},
@@ -86,19 +90,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'Download OVPN File',
-						desc: '1. MacOS desc'
+						desc: '1. MacOS desc',
+						img: 'https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg',
 					},
 					step2: {
 						title: 'Download OpenVPN Connect v3',
-						desc: '2. MacOS desc'
+						desc: '2. MacOS desc',
+						img: 'https://cdn.pixabay.com/photo/2015/06/24/15/45/hands-820272_1280.jpg',
 					},
 					step3: {
 						title: 'MacOS',
-						desc: '3. MacOS desc'
+						desc: '3. MacOS desc',
+						img: 'https://cdn.pixabay.com/photo/2015/02/02/15/28/bar-621033_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. MacOS desc'
+						desc: '4. MacOS desc',
+						img: 'https://cdn.pixabay.com/photo/2018/01/28/10/59/internet-3113279_1280.jpg',
 					},
 				}
 			},
@@ -107,19 +115,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'Download OVPN File',
-						desc: '1. iOS desc'
+						desc: '1. iOS desc',
+						img: 'https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg',
 					},
 					step2: {
 						title: 'Download OpenVPN Connect v3',
-						desc: '2. iOS desc'
+						desc: '2. iOS desc',
+						img: 'https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_1280.jpg',
 					},
 					step3: {
 						title: 'iOS',
-						desc: '3. iOS desc'
+						desc: '3. iOS desc',
+						img: 'https://cdn.pixabay.com/photo/2017/04/03/15/52/mobile-phone-2198770_1280.png',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. iOS desc'
+						desc: '4. iOS desc',
+						img: 'https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_1280.jpg',
 					},
 				}
 			},
@@ -128,19 +140,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'Download OVPN File',
-						desc: '1. Android desc'
+						desc: '1. Android desc',
+						img: 'https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_1280.jpg',
 					},
 					step2: {
 						title: 'Download OpenVPN Connect v3',
-						desc: '2. Android desc'
+						desc: '2. Android desc',
+						img: 'https://cdn.pixabay.com/photo/2016/11/29/12/30/phone-1869510_1280.jpg',
 					},
 					step3: {
 						title: 'Android',
-						desc: '3. Android desc'
+						desc: '3. Android desc',
+						img: 'https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. Android desc'
+						desc: '4. Android desc',
+						img: 'https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_1280.jpg',
 					},
 				}
 			},
@@ -262,19 +278,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
-						desc: '1. Windows 설명'
+						desc: '1. Windows 설명',
+						img: 'https://i0.wp.com/picjumbo.com/wp-content/uploads/social-networks.jpg?w=2210&quality=70',
 					},
 					step2: {
 						title: 'OpenVPN Connect v3 다운로드',
-						desc: '2. Windows 설명'
+						desc: '2. Windows 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg',
 					},
 					step3: {
 						title: 'Windows',
-						desc: '3. Windows 설명'
+						desc: '3. Windows 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/06/24/15/45/hands-820272_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. Windows 설명'
+						desc: '4. Windows 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
 					},
 				}
 			},
@@ -283,19 +303,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
-						desc: '1. MacOS 설명'
+						desc: '1. MacOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg',
 					},
 					step2: {
 						title: 'OpenVPN Connect v3 다운로드',
-						desc: '2. MacOS 설명'
+						desc: '2. MacOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/06/24/15/45/hands-820272_1280.jpg',
 					},
 					step3: {
 						title: 'MacOS',
-						desc: '3. MacOS 설명'
+						desc: '3. MacOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/02/02/15/28/bar-621033_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. MacOS 설명'
+						desc: '4. MacOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2018/01/28/10/59/internet-3113279_1280.jpg',
 					},
 				}
 			},
@@ -304,19 +328,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
-						desc: '1. iOS 설명'
+						desc: '1. iOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2014/08/05/10/30/iphone-410324_1280.jpg',
 					},
 					step2: {
 						title: 'OpenVPN Connect v3 다운로드',
-						desc: '2. iOS 설명'
+						desc: '2. iOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_1280.jpg',
 					},
 					step3: {
 						title: 'iOS',
-						desc: '3. iOS 설명'
+						desc: '3. iOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2017/04/03/15/52/mobile-phone-2198770_1280.png',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. iOS 설명'
+						desc: '4. iOS 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_1280.jpg',
 					},
 				}
 			},
@@ -325,19 +353,23 @@ export default {
 				contents: {
 					step1: {
 						title: 'OVPN 파일 다운로드',
-						desc: '1. Android 설명'
+						desc: '1. Android 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_1280.jpg',
 					},
 					step2: {
 						title: 'OpenVPN Connect v3 다운로드',
-						desc: '2. Android 설명'
+						desc: '2. Android 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/11/29/12/30/phone-1869510_1280.jpg',
 					},
 					step3: {
 						title: 'Android',
-						desc: '3. Android 설명'
+						desc: '3. Android 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427_1280.jpg',
 					},
 					step4: {
 						title: 'VPN',
-						desc: '4. Android 설명'
+						desc: '4. Android 설명',
+						img: 'https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_1280.jpg',
 					},
 				}
 			},
