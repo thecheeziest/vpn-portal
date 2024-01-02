@@ -11,6 +11,7 @@
     import MobileMenu from "./MobileMenu.svelte";
     import MobileDrop from "./MobileDrop.svelte";
     import MobileLanDrop from "./MobileLanDrop.svelte";
+    import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 
     let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
 
@@ -82,6 +83,8 @@
             {/each}
             <MobileLanDrop lanKeys={lanKeys} />
             <!-- 언어 -->
+            <ThemeSwitcher os="mobile" />
+            <!-- 테마 설정 -->
         </ul>
         <!-- 모바일 카테고리 -->
     </div>
