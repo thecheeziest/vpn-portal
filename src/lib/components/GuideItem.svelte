@@ -4,7 +4,7 @@
     export let img = '';
 </script>
 
-<div class={`card border shadow-xl h-fit ${$platformName === 'iOS' || $platformName === 'Android' ? 'w-full m-5' : 'w-2/5 mt-3 mx-5 mb-10'}`}>
+<div class={`card border shadow-xl h-fit ${$platformName === 'iOS' || $platformName === 'Android' ? 'w-full my-5' : 'w-2/5 mt-3 mx-5 mb-10'}`}>
         <figure>
             <img src={img} alt="OVPN File" />
         </figure>
