@@ -6,6 +6,7 @@
     export let sectionKey = '';
     
     let logout = () => { // 로그아웃
+        alert("로그아웃되었습니다.");
         goto('/');
         $isLogin = false;
     }
