@@ -5,8 +5,7 @@
     import { currentPath, darkmode } from '$lib/stores/layoutStore';
     import { l } from '../../routes/i18n';
     import ShadowWall from "$lib/images/ShadowWall.png";
-    import Button from "./Button.svelte";
-import LoginForm from '$lib/components/LoginForm.svelte';
+    import LoginForm from '$lib/components/LoginForm.svelte';
 
     $: darkStyle = !$darkmode && "text-my-lorg";
 
