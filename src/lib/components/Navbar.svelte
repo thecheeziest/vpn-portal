@@ -32,7 +32,7 @@
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-52 text-base-content">
                 {#each cateKeys as sectionKey}
                     <WebDrop sectionKey={sectionKey} />
-                    <!-- 마이페이지 로그아웃 -->
+                    <!-- 드롭메뉴 마이페이지, 로그아웃 -->
                 {/each}
                 <WebLanDrop lanKeys={lanKeys} />
                 <!-- 언어 -->

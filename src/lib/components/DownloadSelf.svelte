@@ -5,10 +5,13 @@
     import GotoLink from './GotoLink.svelte';
 
     export let sectionKey = '';
+    // let darkStyle =
+
+    $: darkStyle = !$darkmode && "bg-my-100";
 </script>
 
 <div class="card w-96 h-fit shadow-xl m-3 mb-10">
-    <div class={`card-body pt-4 pb-5 px-5 border rounded-t-xl ${!$darkmode && "bg-my-100"}`}>
+    <div class={`card-body pt-4 pb-5 px-5 border rounded-t-xl ${darkStyle}`}>
         <strong>{$l(`download.group1`)}</strong>
     </div>
     <div class="card-body p-5 border-x border-b rounded-b-xl bg-base-200">

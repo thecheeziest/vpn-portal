@@ -5,6 +5,10 @@
 
     export let type = '', key = '';
 
+    $: darkStyle = $darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg";
+    $: darkStyleGuide = $darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg";
+    $: darkStylePage = $darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg";
+
     let goPage = () => {
         if (type === "guide") {
             if (key === $platformName.toLowerCase()) {
@@ -48,20 +52,17 @@
 {#if type === "guide"}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <p on:click={goPage}
-    class={` w-fit cursor-pointer my-5
-    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    class={`w-fit cursor-pointer my-5 ${darkStyleGuide}`}>
     <slot></slot>
     </p>
 {:else if type === "page"}
-    <p class={` w-fit cursor-pointer mr-10
-    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    <p class={`w-fit cursor-pointer mr-10 ${darkStylePage}`}>
     <slot></slot>
     </p>
 {:else}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <p on:click={ e => onLink(e)}
-    class={` w-fit cursor-pointer
-    ${$darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg"} `}>
+    class={`w-fit cursor-pointer ${darkStyle}`}>
     <slot></slot>
     </p>
 {/if}
