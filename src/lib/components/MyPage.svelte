@@ -6,9 +6,11 @@
     import Button from "./Button.svelte";
     import { pwEdit } from "$lib/stores/mypageStore";
     import GotoLink from "./GotoLink.svelte";
+
+    $: darkStyle = !$darkmode && "text-my-500";
 </script>
 
-<h2 class={` text-center text-4xl font-bold mt-7 mb-16 ${!$darkmode && "text-my-500"} `}>{$l(`mypage.title`)}</h2>
+<h2 class={`text-center text-4xl font-bold mt-7 mb-16 ${darkStyle}`}>{$l(`mypage.title`)}</h2>
 
 <div class="flex flex-col gap-4 m-auto w-fit ">
     <div class="flex gap-4 items-center justify-center">
@@ -36,9 +38,8 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                {#if !$pwEdit}
                     <input class="w-full h-10 border rounded-md my-3" type="text" placeholder={$l(`mypage.passwordPl`)}>
-                {:else}
+                {#if $pwEdit}
                     <input class="w-full h-10 border rounded-md my-3" type="text" placeholder={$l(`mypage.passwordPlNew`)}>
                     <input class="w-full h-10 border rounded-md" type="text" placeholder={$l(`mypage.passwordPlConfirm`)}>
                 {/if}
