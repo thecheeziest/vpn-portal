@@ -1,6 +1,4 @@
 <script>
-    import { goto } from "$app/navigation";
-    import { isLogin } from "$lib/stores/authStore";
     import { darkmode } from "$lib/stores/layoutStore";
     import { pwEdit } from "$lib/stores/mypageStore";
 
