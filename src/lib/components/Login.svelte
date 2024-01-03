@@ -6,6 +6,9 @@
     import { l } from '../../routes/i18n';
     import ShadowWall from "$lib/images/ShadowWall.png";
     import Button from "./Button.svelte";
+import LoginForm from '$lib/components/LoginForm.svelte';
+
+    $: darkStyle = !$darkmode && "text-my-lorg";
 
     onMount(() => {
         $currentPath = $page.url.pathname;
@@ -15,27 +18,9 @@
 <div class="flex flex-col items-center mt-10">
     <div class="text-center mb-5">
         <h1 class="text-5xl font-bold"><img src={ShadowWall} alt="ShadowWall"></h1>
-        <p class={` py-5 ${!$darkmode && "text-my-lorg"} `}>{$l(`login.title`)}</p>
+        <p class={`py-5 ${darkStyle}`}>{$l(`login.title`)}</p>
     </div>
+    <!-- 로고 및 타이틀 -->
 
-    <form class="bg-base-100 border rounded-3xl drop-shadow-xl">
-        <div class="form-control m-4 w-60">
-            <!-- svelte-ignore a11y-label-has-associated-control -->
-            <label class="label">
-                <span class="label-text">{$l(`login.account`)}</span>
-            </label>
-            <input type="email" placeholder={$l(`login.accountPl`)} class="input input-bordered px-1" required autocomplete="username"/>
-        </div>
-        <div class="form-control m-4 w-60">
-            <!-- svelte-ignore a11y-label-has-associated-control -->
-            <label class="label">
-                <span class="label-text">{$l(`login.password`)}</span>
-            </label>
-            <input type="password" placeholder={$l(`login.passwordPl`)} class="input input-bordered px-1" required autocomplete="current-password"/>
-        </div>
-        <div class="form-control m-4 mt-7">
-            <!-- <button class="btn border-base-300" on:click={login}>{$l(`login.login`)}</button> -->
-            <Button type="login">{$l(`login.login`)}</Button>
-        </div>
-    </form>
+    <LoginForm />
 </div>
