@@ -1,8 +1,8 @@
 <script>
     import {l} from '../../routes/i18n.js';
     import {goto} from '$app/navigation';
-    import Button from '$lib/components/Button.svelte';
     import {isLogin} from '$lib/stores/authStore.js';
+    import Button from '$lib/components/Button.svelte';
 
     let account = '', password = '';
     let login = () => {

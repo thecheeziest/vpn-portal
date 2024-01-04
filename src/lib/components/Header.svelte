@@ -1,14 +1,14 @@
 <script>
     // @ts-nocheck
     import { l } from '../../routes/i18n';
+    import {goto} from '$app/navigation';
     import { darkmode, platformName } from "$lib/stores/layoutStore";
+    import {isLogin} from '$lib/stores/authStore.js';
     import Logo from "./Logo.svelte";
     import HamburgerMenu from "./HamburgerMenu.svelte";
     import Navbar from "./Navbar.svelte";
     import MobileTitle from '$lib/components/MobileTitle.svelte';
     import MobileNavbar from '$lib/components/MobileNavbar.svelte';
-    import {goto} from '$app/navigation';
-    import {isLogin} from '$lib/stores/authStore.js';
 
     let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
 

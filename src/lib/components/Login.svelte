@@ -1,9 +1,9 @@
 <script>
 // @ts-nocheck
     import { onMount } from "svelte";
+    import { l } from '../../routes/i18n';
     import { page } from '$app/stores';
     import { currentPath, darkmode } from '$lib/stores/layoutStore';
-    import { l } from '../../routes/i18n';
     import ShadowWall from "$lib/images/ShadowWall.png";
     import LoginForm from '$lib/components/LoginForm.svelte';
 

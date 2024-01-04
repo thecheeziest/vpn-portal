@@ -1,6 +1,6 @@
 <script>
-    import {currentPath} from '$lib/stores/layoutStore.js';
     import {l} from '../../routes/i18n.js';
+    import {currentPath} from '$lib/stores/layoutStore.js';
 </script>
 
 <h1 class="text-center absolute left-1/2 -translate-x-1/2 lg:hidden">

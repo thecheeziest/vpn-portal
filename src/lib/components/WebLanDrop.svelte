@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
-    import { setLanguage } from "$lib/stores/layoutStore";
     import { l } from "../../routes/i18n";
+    import { setLanguage } from "$lib/stores/layoutStore";
 
     export let lanKeys = '';
 

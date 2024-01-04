@@ -1,9 +1,17 @@
 <script>
     // @ts-nocheck
     import { goto } from "$app/navigation";
-    import { darkmode, platformName } from "$lib/stores/layoutStore";
+    import {currentPath, darkmode, platform, platformName} from '$lib/stores/layoutStore';
+    import {onMount} from 'svelte';
 
     export let type = '', key = '';
+
+    onMount(() => {
+        platform.getPlatform();
+        // 현재 플랫폼 감지
+        $platformName = $platform.split('/')[0];
+        // 현재 플랫폼명 = Windows, iOS..
+    });
 
     $: darkStyle = $darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg";
     $: darkStyleGuide = $darkmode ? "text-my-lorg hover:text-my-org" : "text-my-org hover:text-my-lorg";

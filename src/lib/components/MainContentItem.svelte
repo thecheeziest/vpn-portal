@@ -1,9 +1,9 @@
 <script>
 // @ts-nocheck
-    import { goto } from "$app/navigation";
-    import { darkmode, platform, platformName } from "$lib/stores/layoutStore";
     import { onMount } from "svelte";
+    import { goto } from "$app/navigation";
     import { l } from '../../routes/i18n';
+    import { darkmode, platform, platformName } from "$lib/stores/layoutStore";
     import GotoLink from "./GotoLink.svelte";
 
     export let sectionKey = '';

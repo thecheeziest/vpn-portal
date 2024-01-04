@@ -1,10 +1,10 @@
 <script>
     // @ts-nocheck
-    import Profile from "$lib/images/Profile.png";
     import { l } from '../../routes/i18n';
     import { darkmode } from "$lib/stores/layoutStore";
-    import Button from "./Button.svelte";
     import { pwEdit } from "$lib/stores/mypageStore";
+    import Profile from "$lib/images/Profile.png";
+    import Button from "./Button.svelte";
     import GotoLink from "./GotoLink.svelte";
 
     $: darkStyle = !$darkmode && "text-my-500";

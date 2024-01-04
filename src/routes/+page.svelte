@@ -3,10 +3,11 @@
 
 	import { onMount } from "svelte";
 	import { page } from '$app/stores';
-    import { currentPath } from '$lib/stores/layoutStore';
+	import {currentPath, platform, platformName} from '$lib/stores/layoutStore';
 
     onMount(() => {
         $currentPath = $page.url.pathname;
+		// 현재 패스 값 = nav 메뉴 on
     });
 </script>
 

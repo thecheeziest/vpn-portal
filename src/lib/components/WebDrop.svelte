@@ -1,7 +1,7 @@
 <script>
     import { goto } from "$app/navigation";
-    import { isLogin } from "$lib/stores/authStore";
     import { l } from "../../routes/i18n";
+    import { isLogin } from "$lib/stores/authStore";
 
     export let sectionKey = '';
     

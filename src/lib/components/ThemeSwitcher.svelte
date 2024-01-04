@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {darkmode, mode} from './../stores/layoutStore.js';
+    import {darkmode} from './../stores/layoutStore.js';
     export let os = 'pc';
 
     let chk = false;

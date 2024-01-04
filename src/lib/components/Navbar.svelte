@@ -1,8 +1,8 @@
 <script>
     // @ts-nocheck
-    import ThemeSwitcher from './ThemeSwitcher.svelte';
     import Profile from "$lib/images/Profile.png";
     import dictionary from '../../routes/dictionary';
+    import ThemeSwitcher from './ThemeSwitcher.svelte';
     import WebMenu from './WebMenu.svelte';
     import WebDrop from './WebDrop.svelte';
     import WebLanDrop from './WebLanDrop.svelte';
