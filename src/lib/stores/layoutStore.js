@@ -5,7 +5,7 @@ export let windowWidth = writable(0); // 현재 윈도우창 너비
 export let setLanguage = writable('ENG'); // 현재 설정 언어
 export let platformName = writable(''); // 현재 플랫폼명
 export let darkmode = writable(false); // 다크 모드
-export let mode = writable('');
+export let setOS = writable(false); // 가이드 OS 맞춤 설정 OFF
 
 const setPlatform = () => { // 플랫폼 인식
     let initValues = '';
@@ -13,32 +13,26 @@ const setPlatform = () => { // 플랫폼 인식
 
     const getPlatform = () => {
         const userAgent = navigator.userAgent;
-        
-        if (/Android/i.test(userAgent)) { // 모바일 환경 확인
-            // 안드로이드
-            set('Android');
-        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-            // iOS
-            set('iOS')
+        const isMac = navigator.userAgent.match(/iPhone|iPad|iPod/i) === null && navigator.maxTouchPoints === 0 ? true : false;
+        // MacOS === 0 (true), iPad === 5 (false) / iPad Air, Pro === 0
 
-        } else { // 모바일이 아닌 경우
-          if (/Macintosh/i.test(userAgent)) { // 운영 체제 확인
-              // macOS
-                set('MacOS')
-
-            } else if (/Windows/i.test(userAgent)) {
-              // Windows
-                set('Windows')
-
-            } else if (/Linux/i.test(userAgent)) {
-              // Linux
-                set('Linux')
-            } else {
-                set('PC')
+            if (/Android/i.test(userAgent)) { // 안드로이드
+                set('Android');
+            } else if (/iPhone|iPad|iPod/i.test(userAgent)) { // 아이폰 & 아이패드 미니
+                set('iOS');
+            } else { // 모바일이 아니면
+                if (/Windows/i.test(userAgent)) { // 윈도우
+                    set('Windows');
+                } else if (/Linux/i.test(userAgent)) { // 리눅스
+                    set('Linux')
+                } else if (/Macintosh/i.test(userAgent)) { // 맥 OS
+                    set('MacOS'); // 아이패드 Air, Pro도 MacOS로 설정됨
+                } else {
+                    set('윈도우 혹은 맥 혹은 리눅스 아님');
+                }
             }
-        }
+        // 브라우저 확인
 
-            // 브라우저 확인
         if (/Chrome/i.test(userAgent)) {
             update(value =>
                 value + '/Chrome');

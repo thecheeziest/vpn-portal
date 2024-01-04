@@ -2,7 +2,7 @@
 // @ts-nocheck
     import { onMount } from "svelte";
 	import { page } from '$app/stores';
-    import { currentPath, darkmode, platform, platformName } from '$lib/stores/layoutStore';
+    import { currentPath, darkmode, platform, platformName, setOS } from '$lib/stores/layoutStore';
     import { l } from '../i18n';
     import dictionary from "../dictionary";
     import DownloadSelf from "$lib/components/DownloadSelf.svelte";
@@ -10,8 +10,15 @@
 
     onMount(() => {
         $currentPath = $page.url.pathname;
+        // 현재 패스 값 = nav 메뉴 on
         platform.getPlatform();
         // 현재 플랫폼 감지
+        $platformName = $platform.split('/')[0];
+        // 현재 플랫폼명 = Windows, iOS..
+
+        if ($setOS) { // 기본값 false
+            $setOS = true; // setOS 설정 막음
+        }
     });
 
     let checked = true; // others 토글
