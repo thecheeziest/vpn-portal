@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import {currentPath, platform, platformName} from '$lib/stores/layoutStore';
+    import {platform, platformName} from '$lib/stores/layoutStore';
     import { isLogin } from "$lib/stores/authStore";
     import Login from "$lib/components/Login.svelte";
     import MyPage from "$lib/components/MyPage.svelte";

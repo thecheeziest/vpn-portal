@@ -3,7 +3,7 @@
 
 	import { onMount } from "svelte";
 	import { page } from '$app/stores';
-	import {currentPath, platform, platformName} from '$lib/stores/layoutStore';
+	import {currentPath} from '$lib/stores/layoutStore';
 
     onMount(() => {
         $currentPath = $page.url.pathname;

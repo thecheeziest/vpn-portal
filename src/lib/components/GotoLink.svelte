@@ -1,7 +1,7 @@
 <script>
     // @ts-nocheck
     import { goto } from "$app/navigation";
-    import {currentPath, darkmode, platform, platformName} from '$lib/stores/layoutStore';
+    import {darkmode, platform, platformName} from '$lib/stores/layoutStore';
     import {onMount} from 'svelte';
 
     export let type = '', key = '';
