@@ -18,7 +18,6 @@
         <GuideItem img={$l(`guide.windows.contents.${sectionKey}.img`)} >
             <div slot="guide-title">{$l(`guide.windows.contents.${sectionKey}.title`)}</div>
             <div slot="guide-desc">{$l(`guide.windows.contents.${sectionKey}.desc`)}</div>
-            <!-- 반복할 데이터 경로.${반복되는 데이터 속성}.속성 -->
         </GuideItem>
     {/each}
 </div>

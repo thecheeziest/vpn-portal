@@ -6,8 +6,10 @@
     export let sectionKey = '';
 
     $: pathStyle = $currentPath === $l(`category.menu.${sectionKey}.path`) ? "font-bold" : "";
-    $: pathStyleGuide = $currentPath === `${$l(`category.menu.${sectionKey}.path`)}/${$platformName.toLowerCase()}` ? "font-bold" : "";
+    $: pathStyleGuide = $currentPath === "/guide" ? "font-bold" : "";
+    // $: pathStyleGuide = $currentPath === `${$l(`category.menu.${sectionKey}.path`)}/${$platformName.toLowerCase()}` ? "font-bold" : "";
     $: guidePath = `${$l(`category.menu.${sectionKey}.path`)}/${$platformName.toLowerCase()}`;
+    // /guide/windows
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
