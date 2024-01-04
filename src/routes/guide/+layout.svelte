@@ -1,5 +1,5 @@
 <script>
-    import {afterUpdate, onMount} from 'svelte';
+    import {onMount} from 'svelte';
     import {currentPath, platform, platformName, setOS, windowWidth} from '$lib/stores/layoutStore';
     import { page } from "$app/stores";
     import {goto} from '$app/navigation';

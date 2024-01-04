@@ -13,7 +13,7 @@ const setPlatform = () => { // 플랫폼 인식
 
     const getPlatform = () => {
         const userAgent = navigator.userAgent;
-        const isMac = navigator.userAgent.match(/iPhone|iPad|iPod/i) === null && navigator.maxTouchPoints === 0 ? true : false;
+        // const isMac = navigator.userAgent.match(/iPhone|iPad|iPod/i) === null && navigator.maxTouchPoints === 0;
         // MacOS === 0 (true), iPad === 5 (false) / iPad Air, Pro === 0
 
             if (/Android/i.test(userAgent)) { // 안드로이드
