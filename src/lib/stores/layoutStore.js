@@ -20,6 +20,8 @@ const setPlatform = () => { // 플랫폼 인식
                 set('Android');
             } else if (/iPhone|iPad|iPod/i.test(userAgent)) { // 아이폰 & 아이패드 미니
                 set('iOS');
+            } else if (/like Mac/i.test(userAgent)) { // 아이패드 에어, 프로
+                set('iOS');
             } else { // 모바일이 아니면
                 if (/Windows/i.test(userAgent)) { // 윈도우
                     set('Windows');
@@ -28,7 +30,7 @@ const setPlatform = () => { // 플랫폼 인식
                 } else if (/Macintosh/i.test(userAgent)) { // 맥 OS
                     set('MacOS'); // 아이패드 Air, Pro도 MacOS로 설정됨
                 } else {
-                    set('윈도우 혹은 맥 혹은 리눅스 아님');
+                    set('Other OS');
                 }
             }
         // 브라우저 확인

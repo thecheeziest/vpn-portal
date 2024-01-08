@@ -23,6 +23,7 @@
 	});
 
 </script>
+
 <div class="min-h-screen relative max-w-screen">
 	{#if $page.url.pathname !== '/login'}
 		<Header>
