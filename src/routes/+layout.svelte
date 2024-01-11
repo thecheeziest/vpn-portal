@@ -8,7 +8,7 @@
 	import {onMount} from 'svelte';
 	import {platform, platformName, setLanguage, darkmode} from '$lib/stores/layoutStore';
 
-	onMount(() => {
+	onMount(async () => {
 		$setLanguage = localStorage.getItem('language') || 'ENG';
 		// setLanguage 값 = 로컬스토리지의 language 값
 		platform.getPlatform();
