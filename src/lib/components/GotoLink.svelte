@@ -64,7 +64,7 @@
     <slot></slot>
     </p>
 {:else if type === "page"}
-    <p class={`w-fit cursor-pointer mr-10 ${darkStylePage}`}>
+    <p class={`w-fit cursor-pointer ${darkStylePage}`}>
     <slot></slot>
     </p>
 {:else}

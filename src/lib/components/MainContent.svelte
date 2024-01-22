@@ -7,7 +7,7 @@
     let homeKeys = Object.keys(dictionary[currentLanguage].home);
 </script> 
 
-<div class="flex flex-wrap justify-center items-start">
+<div class="flex flex-wrap justify-center items-start w-full h-max">
     {#each homeKeys as sectionKey}
         <MainContentItem sectionKey={sectionKey} />
     {/each}

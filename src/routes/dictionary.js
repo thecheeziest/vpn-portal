@@ -35,7 +35,7 @@ export default {
 		home: {
 			welcome: {
 				title: 'Welcome',
-				desc: 'Server Host - vpn.shadowwall.co.kr <br> You are connected by ',
+				desc: 'Server Host - vpn.shadowwall.co.kr<br>You are connected<br>by ',
 				goto: 'Go to Guide',
 				gotoPath: '/guide/',
 				ovpn: 'Download OVPN',
@@ -49,7 +49,7 @@ export default {
 			},
 			download: {
 				title: 'Download Client',
-				desc: 'To download client software, Use this page.',
+				desc: 'To download client software,<br>Use this page.',
 				gotoPath: '/download',
 				pc: 'Direct download',
 				pcLink: '/',
@@ -256,13 +256,13 @@ export default {
 			},
 			mypage: {
 				title: '마이 페이지',
-				desc: '해당 페이지에서 비밀번호를 변경할 수 있습니다.',
+				desc: '해당 페이지에서 비밀번호를<br>변경할 수 있습니다.',
 				goto: '페이지 바로가기',
 				gotoPath: '/mypage',
 			},
 			download: {
 				title: '클라이언트 다운로드',
-				desc: '해당 페이지에서 클라이언트 소프트웨어를 다운로드할 수 있습니다.',
+				desc: '해당 페이지에서 클라이언트 소프트웨어를<br>다운로드할 수 있습니다.',
 				gotoPath: '/download',
 				pc: '직접 다운로드',
 				pcLink: '/',

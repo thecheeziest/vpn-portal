@@ -28,12 +28,14 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div on:click={gotoPage} class={`grid flex-grow card rounded-3xl p-5 m-5 max-w-sm cursor-pointer ${darkStyle} border-4 shadow-xl`}>
+<!--<div on:click={gotoPage} class={`w-1/6 h-96 m-3 cursor-pointer ${darkStyle}`}>-->
+<div on:click={gotoPage} class={`grid flex-grow h-96 p-5 m-5 border max-w-xs shadow-md cursor-pointer ${darkStyle}`}>
+<!--<div on:click={gotoPage} class={`grid flex-grow card rounded-3xl p-5 m-5 max-w-sm cursor-pointer ${darkStyle} border-4 shadow-xl`}>-->
     <!-- 카드 클릭 시 가이드, 마이페이지, 다운로드 이동 -->
-    <h2 class={`text-3xl text-center font-bold border-b-2 pb-4 ${darkStyleTitle}`}>
+    <h2 class={`text-3xl text-center font-bold mt-3 h-3/5 border-b-2 ${darkStyleTitle}`}>
         {$l(`home.${sectionKey}.title`)}
     </h2>
-    <p class="my-3">
+    <p class="text-center mt-5">
         {@html $l(`home.${sectionKey}.desc`)}
         
         {#if sectionKey === 'welcome'}
@@ -42,7 +44,7 @@
         {/if}
     </p>
 
-    <div class="flex flex-wrap">
+    <div class="flex justify-around items-end">
         {#if sectionKey !== 'download'}
         <!-- Download 카드 아닐 때 -->
             <GotoLink type="page">{$l(`home.${sectionKey}.goto`)}</GotoLink>
