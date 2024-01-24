@@ -188,8 +188,8 @@ export default {
 		},
 		login: {
 			title: 'VPN User Portal',
-			account: 'Account',
-			accountPl: 'Enter your VPN account',
+			username: 'Username',
+			usernamePl: 'Enter your VPN account',
 			password: 'Password',
 			passwordPl: 'Enter your VPN password',
 			login: 'Login'

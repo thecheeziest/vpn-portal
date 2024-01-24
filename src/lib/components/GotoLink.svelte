@@ -60,17 +60,17 @@
 {#if type === "guide"}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <p on:click={goPage}
-    class={`w-fit cursor-pointer my-5 ${darkStyleGuide}`}>
+    class={`w-fit font-bold cursor-pointer my-5 ${darkStyleGuide}`}>
     <slot></slot>
     </p>
 {:else if type === "page"}
-    <p class={`w-fit cursor-pointer ${darkStylePage}`}>
+    <p class={`w-fit font-bold cursor-pointer ${darkStylePage}`}>
     <slot></slot>
     </p>
 {:else}
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
     <p on:click={ e => onLink(e)}
-    class={`w-fit cursor-pointer ${darkStyle}`}>
+    class={`w-fit font-bold cursor-pointer ${darkStyle}`}>
     <slot></slot>
     </p>
 {/if}

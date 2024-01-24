@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import {platform, platformName} from '$lib/stores/layoutStore';
-    import { isLogin } from "$lib/stores/authStore";
+    import {auth} from '$lib/stores/authStore';
     import Login from "$lib/components/Login.svelte";
     import MyPage from "$lib/components/MyPage.svelte";
 
@@ -14,7 +14,7 @@
 </script>
 
 <section class="h-full">
-    {#if !$isLogin}
+    {#if !$auth.isLogin}
         <Login />
     {:else}
         <MyPage />

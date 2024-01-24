@@ -3,7 +3,6 @@
     import { l } from '../../routes/i18n';
     import {goto} from '$app/navigation';
     import { darkmode, platformName } from "$lib/stores/layoutStore";
-    import {isLogin} from '$lib/stores/authStore.js';
     import Logo from "./Logo.svelte";
     import HamburgerMenu from "./HamburgerMenu.svelte";
     import Navbar from "./Navbar.svelte";
@@ -32,7 +31,6 @@
         alert("로그아웃되었습니다.");
         goto('/');
         isDrawerOpen = false;
-        $isLogin = false;
     }
 </script>
 
