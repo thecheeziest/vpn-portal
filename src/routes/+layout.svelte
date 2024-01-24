@@ -1,12 +1,13 @@
 <script>
 	import "../app.css";
 	import { page } from '$app/stores';
+	import {onMount} from 'svelte';
 	import { themeChange } from 'theme-change';
+	import {platform, platformName, setLanguage, darkmode} from '$lib/stores/layoutStore';
 	import Header from '$lib/components/Header.svelte';
     import Footer from "$lib/components/Footer.svelte";
 
-	import {onMount} from 'svelte';
-	import {platform, platformName, setLanguage, darkmode} from '$lib/stores/layoutStore';
+	export const ssr = false;
 
 	onMount(async () => {
 		$setLanguage = localStorage.getItem('language') || 'ENG';
