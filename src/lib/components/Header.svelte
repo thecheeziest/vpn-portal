@@ -8,6 +8,7 @@
     import Navbar from "./Navbar.svelte";
     import MobileTitle from '$lib/components/MobileTitle.svelte';
     import MobileNavbar from '$lib/components/MobileNavbar.svelte';
+    import {auth} from '$lib/stores/authStore.js';
 
     let isDrawerOpen = false; // 다국어 선택 드롭박스 - 기본 close
 
@@ -27,10 +28,13 @@
         isDrawerOpen = false;
     }
 
-    let logout = () => { // 로그아웃
-        alert("로그아웃되었습니다.");
-        goto('/');
+    let logout = async () => { // 로그아웃
         isDrawerOpen = false;
+        try {
+            await auth.logout();
+        } catch (err) {
+            console.log(err);
+        }
     }
 </script>
 

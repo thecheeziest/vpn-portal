@@ -401,8 +401,8 @@ export default {
 		},
 		login: {
 			title: 'VPN 사용자 포털',
-			account: '아이디',
-			accountPl: 'VPN 계정을 입력하세요',
+			username: '아이디',
+			usernamePl: 'VPN 계정을 입력하세요',
 			password: '비밀번호',
 			passwordPl: 'VPN 비밀번호를 입력하세요',
 			login: '로그인'

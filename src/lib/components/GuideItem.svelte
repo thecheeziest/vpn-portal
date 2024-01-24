@@ -8,7 +8,7 @@
 
 <div class={`card border shadow-xl h-fit ${osStyle}`}>
         <figure>
-            <img src={img} alt="OVPN File" />
+            <img src={img} alt="OVPN File" class="h-96 w-full object-cover" />
         </figure>
 
     <div class="card-body">
