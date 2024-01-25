@@ -1,5 +1,6 @@
 <script>
 	import "../app.css";
+	import "$lib/font/pretendard.css";
 	import { page } from '$app/stores';
 	import {onMount} from 'svelte';
 	import { themeChange } from 'theme-change';
