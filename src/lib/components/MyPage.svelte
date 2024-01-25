@@ -6,13 +6,14 @@
     import Profile from "$lib/images/Profile.png";
     import Button from "./Button.svelte";
     import GotoLink from "./GotoLink.svelte";
+    import {auth} from '$lib/stores/authStore.js';
 
-    let confirmpass = "", newpass = "", oldpass = "";
+    let oldpass = "", newpass = "", confirmpass = "";
 
     $: darkStyle = !$darkmode && "text-my-500";
 
     let onChange = async () => {
-        if (newpass !== oldpass) {
+        if (newpass !== confirmpass) {
             alert('새 비밀번호가 일치하지 않습니다.');
             return;
         } else if (confirmpass.trim() === '' || newpass.trim() === '' || oldpass.trim() === '') {
@@ -20,20 +21,21 @@
             return;
         }
 
-        try {
-            let changePw = {
-                password: {
-                    confirmpass,
-                    newpass,
-                    oldpass
-                }
+        let InputPw = {
+            password: {
+                oldpass,
+                newpass,
+                confirmpass,
             }
+        }
 
-            // await auth.login( { login: { username, password } } );
-
-        } catch (err) {
-            console.log(err);
-            alert('오류입니다')
+        try {
+            await changePw(InputPw);
+            oldpass = '';
+            newpass = '';
+            confirmpass = '';
+        } catch(err) {
+            console.log(err)
         }
     }
 </script>
@@ -67,9 +69,9 @@
             </div>
             <div class="flex flex-col">
                 {#if $pwEdit}
-                    <input class="w-full h-10 border rounded-md my-3" type="text" bind:value={confirmpass} placeholder={$l(`mypage.passwordPl`)}>
+                    <input class="w-full h-10 border rounded-md my-3" type="text" bind:value={oldpass} placeholder={$l(`mypage.passwordPl`)}>
                     <input class="w-full h-10 border rounded-md mb-3" type="text" bind:value={newpass} placeholder={$l(`mypage.passwordPlNew`)}>
-                    <input class="w-full h-10 border rounded-md mb-3" type="text" bind:value={oldpass} placeholder={$l(`mypage.passwordPlConfirm`)}>
+                    <input class="w-full h-10 border rounded-md mb-3" type="text" bind:value={confirmpass} placeholder={$l(`mypage.passwordPlConfirm`)}>
                 {/if}
             </div>
         </div>
