@@ -1,8 +1,11 @@
 export default {
-	ENG: {
+	ENG: { // 영문 버전
 		pageTitle: 'Download Page',
+		// 홈 메뉴명
 		category: {
+		// 카테고리
 			menu: {
+			// 카테고리명, 패스 경로
 				home: {
 					title: 'Home',
 					path: '/'
@@ -17,10 +20,12 @@ export default {
 				},
 			},
 			mypage: {
+			// 프로필 아이콘 메뉴명, 패스 경로
 				title: 'My Page',
 				path: '/mypage'
 			},
 			language: {
+			// 언어 선택 메뉴명, 언어 선택
 				title: 'Language',
 				lan: {
 					eng: 'ENG',
@@ -28,11 +33,13 @@ export default {
 				}
 			},
 			logout: {
+			// 로그아웃 메뉴명, 패스 경로
 				title: 'Logout',
 				path: '/'
 			}
 		},
 		home: {
+		// 홈 메뉴 콘텐츠
 			welcome: {
 				title: 'Welcome',
 				desc: 'Server Host - vpn.shadowwall.co.kr<br>You are connected<br>by ',
@@ -60,6 +67,7 @@ export default {
 			},
 		},
 		guide: {
+		// 가이드 메뉴 콘텐츠
 			windows: {
 				title: 'How to connect VPN for Windows',
 				contents: {
@@ -81,6 +89,16 @@ export default {
 					step4: {
 						title: 'VPN',
 						desc: '4. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
+					},
+					step5: {
+						title: 'VPN',
+						desc: '5. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
+					},
+					step6: {
+						title: 'VPN',
+						desc: '6. windows desc',
 						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
 					},
 				}
@@ -162,6 +180,7 @@ export default {
 			},
 		},
 		download: {
+		// 다운로드 메뉴 콘텐츠
 			title: 'Download Client',
 			group1: 'For your device',
 			group2: 'Others',
@@ -187,6 +206,7 @@ export default {
 			}
 		},
 		login: {
+		// 로그인 페이지 콘텐츠
 			title: 'VPN User Portal',
 			username: 'Username',
 			usernamePl: 'Enter your VPN account',
@@ -195,6 +215,7 @@ export default {
 			login: 'Login'
 		},
 		mypage: {
+		// 마이 페이지 콘텐츠
 			title: 'My Page',
 			download: 'Download OVPN',
 			group: {
@@ -212,40 +233,50 @@ export default {
 			}
 		},
 	},
-	KOR: {
+	KOR: { // 한글 버전
 		pageTitle: '다운로드 페이지',
+		// 홈 메뉴명
 		category: {
+		// 카테고리
 			menu: {
+			// 카테고리명, 패스 경로
 				home: {
+				// 홈 메뉴명, 패스 경로
 					title: '홈',
 					path: '/'
 				},
 				guide: {
+				// 가이드 메뉴명, 패스 경로
 					title: '가이드',
 					path: '/guide'
 				},
 				download: {
+				// 다운로드 메뉴명, 패스 경로
 					title: '다운로드',
 					path: '/download'
 				},
 			},
 			mypage: {
+			// 프로필 아이콘 메뉴명, 패스 경로
 				title: '마이 페이지',
 				path: '/mypage'
 			},
 			language: {
+			// 언어 선택 메뉴명, 언어 선택
 				title: '언어',
 				lan: {
-					eng: 'ENG',
-					kor: 'KOR'
+					eng: '영문',
+					kor: '한글'
 				}
 			},
 			logout: {
+			// 로그아웃 메뉴명, 패스 경로
 				title: '로그아웃',
 				path: '/'
 			}
 		},
 		home: {
+		//
 			welcome: {
 				title: '환영합니다',
 				desc: '서버 호스트 - vpn.shadowwall.co.kr<br>접속 환경 -',
@@ -273,6 +304,7 @@ export default {
 			},
 		},
 		guide: {
+		//
 			windows: {
 				title: 'Windows에서 VPN 연결하는 방법',
 				contents: {
@@ -294,6 +326,16 @@ export default {
 					step4: {
 						title: 'VPN',
 						desc: '4. Windows 설명',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
+					},
+					step5: {
+						title: 'VPN',
+						desc: '5. windows desc',
+						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
+					},
+					step6: {
+						title: 'VPN',
+						desc: '6. windows desc',
 						img: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
 					},
 				}
@@ -375,6 +417,7 @@ export default {
 			},
 		},
 		download: {
+		// 다운로드 메뉴 콘텐츠
 			title: '클라이언트 다운로드',
 			group1: '내 기기용',
 			group2: '다른 기기용',
@@ -400,6 +443,7 @@ export default {
 			}
 		},
 		login: {
+		// 로그인 페이지 콘텐츠
 			title: 'VPN 사용자 포털',
 			username: '아이디',
 			usernamePl: 'VPN 계정을 입력하세요',
@@ -408,6 +452,7 @@ export default {
 			login: '로그인'
 		},
 		mypage: {
+		// 마이 페이지 콘텐츠
 			title: '마이 페이지',
 			download: 'OVPN 다운로드',
 			group: {
