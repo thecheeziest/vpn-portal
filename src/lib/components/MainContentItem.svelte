@@ -8,8 +8,8 @@
 
     export let sectionKey = '';
 
-    $: darkStyle = $darkmode ? "hover:bg-gray-900" : "bg-my-100 text-my-500 border-my-300 hover:bg-my-400 hover:text-my-100";
-    $: darkStyleTitle = !$darkmode && "border-my-300";
+    $: darkStyle = $darkmode ? "hover:bg-gray-900" : "bg-my-050 text-my-500 border-my-200 hover:bg-my-400 hover:text-my-100";
+    $: darkStyleTitle = !$darkmode && "border-my-500";
 
     onMount(() => {
         platform.getPlatform();
@@ -30,7 +30,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div on:click={gotoPage} class={`grid flex-grow h-96 p-5 m-5 border max-w-xs shadow-md cursor-pointer ${darkStyle}`}>
     <!-- 카드 클릭 시 가이드, 마이페이지, 다운로드 이동 -->
-    <h2 class={`text-3xl text-center font-bold mt-3 h-3/5 border-b-2 ${darkStyleTitle}`}>
+    <h2 class={`text-3xl text-center font-bold mt-3 h-3/5 border-b ${darkStyleTitle}`}>
         {$l(`home.${sectionKey}.title`)}
     </h2>
     <p class="text-center mt-5">

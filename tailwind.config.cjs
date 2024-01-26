@@ -14,9 +14,6 @@ module.exports = {
         'my-100': '#E0E3E8',
         'my-050': '#F6F7F7',
       },
-      fontFamily: {
-        
-      }
     },
   },
   plugins: [require("daisyui")],
