@@ -7,7 +7,7 @@
 	import {platform, platformName, setLanguage, darkmode} from '$lib/stores/layoutStore';
 	import Header from '$lib/components/Header.svelte';
     import Footer from "$lib/components/Footer.svelte";
-	import {auth} from '$lib/stores/authStore.js';
+	import {isLogin, getSession} from '$lib/stores/authStore.js';
 	export const ssr = false;
 
 	onMount(async () => {
@@ -23,16 +23,11 @@
 
 		themeChange();
 
-		const getSession = document.cookie.substring("session=".length); // 세션 값 추출
-		console.log($auth)
+		$getSession = document.cookie.substring("session=".length); // 세션 값 추출
+		$isLogin = $getSession !== ''; // 세션 값이 있으면 로그인 상태로 설정
 	});
-
-	let test = () => {
-		console.log(document.cookie);
-		console.log($auth);
-	}
 </script>
-<button on:click={test}>testestest</button>
+
 <div class="min-h-screen relative max-w-screen">
 	{#if $page.url.pathname !== '/login'}
 		<Header>

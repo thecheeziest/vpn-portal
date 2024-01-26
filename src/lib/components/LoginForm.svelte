@@ -1,6 +1,6 @@
 <script>
     import {l} from '../../routes/i18n.js';
-    import {auth} from '$lib/stores/authStore.js';
+    import {auth, isLogin} from '$lib/stores/authStore.js';
     import Button from '$lib/components/Button.svelte';
 
     let username = '', password = '';
@@ -16,6 +16,7 @@
 
         try {
             await auth.login( { login: { username, password } } );
+            $isLogin = true; // 로그인 시 로그인 유지 설정
             username = '';
             password = '';
         } catch(err) {
